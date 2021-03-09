@@ -28,5 +28,7 @@ public class Rettangolo {
 		return vertice;
 	}
 	
-	
+	public void sposta(int deltaX, int deltaY) {
+		vertice.trasla(deltaX, deltaY);
+	}
 }

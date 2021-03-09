@@ -12,10 +12,18 @@ public class MainForme {
 		System.out.println(origine.getX());
 		System.out.println(origine.getY());
 		origine.trasla(1, 1);
+		System.out.println("-----");
+		System.out.println("traslazione del rettangolo in corso...");
+		System.out.println("-----");
 		System.out.println(origine.getX());
+		System.out.println(origine.getY());
 		
 		System.out.println("Stampe del rettangolo");
 		System.out.println(rect.getBase());
 		System.out.println(rect.getAltezza());
+		
+		System.out.println("Vertice del rettangolo: "+ rect.getVertice().getX() + "," + rect.getVertice().getY());
+		rect.sposta(+2, +3);
+		System.out.println("Vertice del rettangolo dopo lo spostamento: "+ rect.getVertice().getX() + "," + rect.getVertice().getY());
 	}
 }
