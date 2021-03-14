@@ -1,8 +1,29 @@
 public class MainForme {
 	public static void main(String[] args) {
-		Punto origine = new Punto();
-		origine.setX(0);
-		origine.setY(0);
+		Punto origine = new Punto(0,0);
+		
+		Punto unoZero = new Punto(1,0);
+		
+		System.out.println("---");
+		System.out.println(origine.getX());
+		System.out.println(origine.getY());
+		origine.trasla(1, 1);
+		System.out.println("---");
+		System.out.println(origine.getX());
+		System.out.println(origine.getY());
+		origine.trasla(1,1);
+		System.out.println("---");
+		System.out.println(origine.getX());
+		System.out.println(origine.getY());
+		origine.trasla(0,1);
+		System.out.println("---");
+		System.out.println(origine.getX());
+		System.out.println(origine.getY());
+		System.out.println("---");
+		System.out.println("---");
+		System.out.println("---");
+		System.out.println(unoZero.getX());
+		System.out.println(unoZero.getY());
 		
 		Rettangolo rect = new Rettangolo();
 		rect.setVertice(origine);

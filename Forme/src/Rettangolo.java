@@ -1,19 +1,13 @@
 
 public class Rettangolo {
-	private int base=8;
-	private int altezza=3;
+	private int base;
+	private int altezza;
 	private Punto vertice;
 	
-	public void setBase(int b) {
-		base=b;
-	}
-	
-	public void setAltezza(int a) {
-		altezza=a;
-	}
-	
-	public void setVertice(Punto v) {
-		vertice=v;
+	public Rettangolo (Punto v, int base, int altezza) {
+		this.vertice=v;
+		this.altezza=altezza;
+		this.base=base;
 	}
 	
 	public int getBase() {
