@@ -25,4 +25,14 @@ public class Rettangolo {
 	public void sposta(int deltaX, int deltaY) {
 		vertice.trasla(deltaX, deltaY);
 	}
+	
+	//Overloading
+	public void scala(float fattore) {
+		this.scala(fattore, fattore);
+	}
+	
+	public void scala(float fattoreBase, float fattoreAltezza) {
+		this.base *= fattoreBase;
+		this.altezza *= fattoreAltezza;
+	}
 }
