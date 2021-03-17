@@ -3,9 +3,9 @@
 
 /**
  * Classe Stanza - una stanza in un gioco di ruolo.
- * Una stanza e' un luogo fisico nel gioco.
+ * Una stanza è un luogo fisico nel gioco.
  * E' collegata ad altre stanze attraverso delle uscite.
- * Ogni uscita e' associata ad una direzione.
+ * Ogni uscita è associata ad una direzione.
  * 
  * @author docente di POO 
  * @see Attrezzo
