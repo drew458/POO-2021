@@ -4,16 +4,12 @@ public class Rettangolo {
 	private int altezza;
 	private Punto vertice;
 	
-	public Rettangolo (Punto vertice, int base, int altezza) {
-		this.vertice=vertice;
+	public Rettangolo (Punto v, int base, int altezza) {
+		this.vertice=v;
 		this.altezza=altezza;
 		this.base=base;
 	}
 	
-	public Rettangolo() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public int getBase() {
 		return base;
 	}
