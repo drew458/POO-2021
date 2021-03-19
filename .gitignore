@@ -1,13 +1,21 @@
-.metadata\
+# Eclipse metadata folder 
+.metadata/
+
 bin/
+
 tmp/
+
 *.tmp
 *.bak
 *.swp
 *~.nib
+
 local.properties
+
 .settings/
+
 .loadpath
+
 .recommenders
 
 # External tool builders
