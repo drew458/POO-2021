@@ -1,12 +1,12 @@
-
+package it.uniroma3.diadia;
 
 import java.util.Scanner;
 
 /**
  * Classe principale di diadia, un semplice gioco di ruolo ambientato al dia.
- * Per giocare crea un'istanza di questa classe e invoca il metodo gioca
+ * Per giocare crea un'istanza di questa classe e invoca il metodo gioca.
  *
- * Questa e' la classe principale crea e istanzia tutte le altre
+ * Questa è la classe principale: crea e istanzia tutte le altre.
  *
  * @author  docente di POO 
  *         (da un'idea di Michael Kolling and David J. Barnes) 
@@ -43,13 +43,14 @@ public class DiaDia {
 		do		
 			istruzione = scannerDiLinee.nextLine();
 		while (!processaIstruzione(istruzione));
+		scannerDiLinee.close();
 	}   
 
 
 	/**
-	 * Processa una istruzione 
+	 * Processa un istruzione 
 	 *
-	 * @return true se l'istruzione e' eseguita e il gioco continua, false altrimenti
+	 * @return true se l'istruzione è eseguita e il gioco continua, false altrimenti.
 	 */
 	private boolean processaIstruzione(String istruzione) {
 		Comando comandoDaEseguire = new Comando(istruzione);
@@ -82,8 +83,8 @@ public class DiaDia {
 	}
 
 	/**
-	 * Cerca di andare in una direzione. Se c'e' una stanza ci entra 
-	 * e ne stampa il nome, altrimenti stampa un messaggio di errore
+	 * Cerca di andare in una direzione. Se c'è una stanza ci entra 
+	 * e ne stampa il nome, altrimenti stampa un messaggio di errore.
 	 */
 	private void vai(String direzione) {
 		if(direzione==null)

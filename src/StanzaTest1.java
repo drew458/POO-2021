@@ -1,4 +1,4 @@
-
+import it.uniroma3.diadia.*;
 
 public class StanzaTest1 {
 	
