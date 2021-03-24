@@ -29,6 +29,9 @@ public class DiaDia {
 	static final private String[] elencoComandi = {"vai", "aiuto", "fine"};
 
 	private Partita partita;
+	private Labirinto labirinto;
+	private Giocatore giocatore;
+	private Borsa borsa;
 
 	public DiaDia() {
 		this.partita = new Partita();
@@ -90,15 +93,15 @@ public class DiaDia {
 		if(direzione==null)
 			System.out.println("Dove vuoi andare ?");
 		Stanza prossimaStanza = null;
-		prossimaStanza = this.partita.getStanzaCorrente().getStanzaAdiacente(direzione);
+		prossimaStanza = this.labirinto.getStanzaCorrente().getStanzaAdiacente(direzione);
 		if (prossimaStanza == null)
 			System.out.println("Direzione inesistente");
 		else {
-			this.partita.setStanzaCorrente(prossimaStanza);
-			int cfu = this.partita.getCfu();
-			this.partita.setCfu(cfu--);
+			this.labirinto.setStanzaCorrente(prossimaStanza);
+			int cfu = this.giocatore.getCfu();
+			this.giocatore.setCfu(cfu--);
 		}
-		System.out.println(partita.getStanzaCorrente().getDescrizione());
+		System.out.println(labirinto.getStanzaCorrente().getDescrizione());
 	}
 
 	/**
