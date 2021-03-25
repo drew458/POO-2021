@@ -2,6 +2,11 @@ package it.uniroma3.diadia;
 
 import java.util.Scanner;
 
+import it.uniroma3.diadia.ambienti.Labirinto;
+import it.uniroma3.diadia.ambienti.Stanza;
+import it.uniroma3.diadia.giocatore.Borsa;
+import it.uniroma3.diadia.giocatore.Giocatore;
+
 /**
  * Classe principale di diadia, un semplice gioco di ruolo ambientato al dia.
  * Per giocare crea un'istanza di questa classe e invoca il metodo gioca.
@@ -26,12 +31,13 @@ public class DiaDia {
 			"o regalarli se pensi che possano ingraziarti qualcuno.\n\n"+
 			"Per conoscere le istruzioni usa il comando 'aiuto'.";
 	
-	static final private String[] elencoComandi = {"vai", "aiuto", "fine"};
+	static final private String[] elencoComandi = {"vai", "aiuto", "fine", "prendi", "posa"};
 
 	private Partita partita;
 	private Labirinto labirinto;
 	private Giocatore giocatore;
 	private Borsa borsa;
+	private Stanza stanza;
 
 	public DiaDia() {
 		this.partita = new Partita();
@@ -65,6 +71,10 @@ public class DiaDia {
 			this.vai(comandoDaEseguire.getParametro());
 		else if (comandoDaEseguire.getNome().equals("aiuto"))
 			this.aiuto();
+		else if (comandoDaEseguire.getNome().equals("prendi"))
+			this.prendi();
+		else if (comandoDaEseguire.getNome().equals("posa"))
+			this.posa();
 		else
 			System.out.println("Comando sconosciuto");
 		if (this.partita.vinta()) {
@@ -103,6 +113,32 @@ public class DiaDia {
 		}
 		System.out.println(labirinto.getStanzaCorrente().getDescrizione());
 	}
+	
+	private void prendi(String attrezzo) {
+		if(attrezzo==null)
+			System.out.println("Che attrezzo vuoi prendere?");
+		if(stanza.hasAttrezzo(attrezzo) == false)
+			System.out.println("Attrezzo non presente nella stanza!");
+		else {
+			this.stanza.removeAttrezzo(attrezzo);
+			this.borsa.addAttrezzo(borsa.getAttrezzo(attrezzo));
+			System.out.println("Attrezzo preso!");
+		}
+	}
+	
+	private void posa(String attrezzo) {
+		if(attrezzo==null)
+			System.out.println("Che attrezzo vuoi prendere?");
+		if(stanza.hasAttrezzo(attrezzo) == false)
+			System.out.println("Attrezzo non presente nella stanza!");
+		else {
+			this.borsa.removeAttrezzo(attrezzo);
+			this.stanza.addAttrezzo(stanza.getAttrezzo(attrezzo));
+			System.out.println("Attrezzo posato!");
+		}
+			
+	}
+	
 
 	/**
 	 * Comando "Fine".

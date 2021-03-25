@@ -1,5 +1,6 @@
-package it.uniroma3.diadia;
+package it.uniroma3.diadia.ambienti;
 
+import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 /**
  * Classe Stanza - una stanza in un gioco di ruolo.
@@ -165,8 +166,12 @@ public class Stanza {
 	 * @param nomeAttrezzo
 	 * @return true se l'attrezzo e' stato rimosso, false altrimenti
 	 */
-	public boolean removeAttrezzo(Attrezzo attrezzo) {
-		// TODO da implementare
+	public boolean removeAttrezzo(String nomeAttrezzo) {
+		for (Attrezzo attrezzo : this.attrezzi) {
+			if (attrezzo.getNome().equals(nomeAttrezzo))
+				attrezzo = null;
+			return true;
+		}
 		return false;
 	}
 
