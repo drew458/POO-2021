@@ -1,3 +1,5 @@
+package forme;
+
 public class MainForme {
 	public static void main(String[] args) {
 		Punto origine = new Punto(0,0);
