@@ -15,32 +15,32 @@ import it.uniroma3.diadia.giocatore.Giocatore;
 
 public class Partita {
 
-	static final private int CFU_INIZIALI = 20;
-
 	private boolean finita;
-	Labirinto labirinto;
-	Giocatore giocatore;
+	private Labirinto labirinto;
+	private Giocatore giocatore;
+	private Stanza stanzaCorrente;
+	
 	
 	public Partita(){
-		labirinto.creaStanze();
+		this.labirinto = new Labirinto();
 		this.finita = false;
-		this.giocatore.setCfu(CFU_INIZIALI);
+		this.giocatore = new Giocatore();
+		this.stanzaCorrente = this.labirinto.getStanzaCorrente();
 	}
-
-    /**
-     * Crea tutte le stanze e le porte di collegamento
-     */
-    private void creaStanze() {
-
-		/* crea gli attrezzi */
-    	Attrezzo lanterna = new Attrezzo("lanterna",3);
-		Attrezzo osso = new Attrezzo("osso",1);
-    			
-		/* pone gli attrezzi nelle stanze */
-		aulaN10.addAttrezzo(lanterna);
-		atrio.addAttrezzo(osso);
-    }
-
+	
+	public Stanza getStanzaCorrente() {
+		return this.labirinto.getStanzaCorrente();
+	}
+	
+	public Stanza getStanzaVincente() {
+		return this.labirinto.getStanzaVincente();
+	}
+	
+	public void setStanzaCorrente(Stanza stanzaCorrente) {
+		this.stanzaCorrente = stanzaCorrente;
+	}
+	
+	
     /**
 	 * Restituisce vero se e solo se la partita e' stata vinta
 	 * @return vero se partita vinta
@@ -63,5 +63,17 @@ public class Partita {
 	 */
 	public void setFinita() {
 		this.finita = true;
+	}
+	
+	public int getCfu() {
+		return this.giocatore.getCfu();
+	}
+	
+	public void setCfu(int cfu) {
+		this.giocatore.setCfu(cfu);
+	}
+	
+	public Giocatore getGiocatore() {
+		return this.giocatore;
 	}
 }
