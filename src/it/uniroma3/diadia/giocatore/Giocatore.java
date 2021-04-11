@@ -24,4 +24,8 @@ public class Giocatore {
 		return this.borsa;
 	}
 	
+	public boolean isVivo() {
+		return this.cfu>0;
+	}
+	
 }
