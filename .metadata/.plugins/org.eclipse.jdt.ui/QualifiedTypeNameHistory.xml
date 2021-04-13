@@ -3,4 +3,6 @@
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
     <fullyQualifiedTypeName name="esercitazione.test.Persone"/>
+    <fullyQualifiedTypeName name="forme.Punto"/>
+    <fullyQualifiedTypeName name="Strumento"/>
 </qualifiedTypeNameHistroy>
