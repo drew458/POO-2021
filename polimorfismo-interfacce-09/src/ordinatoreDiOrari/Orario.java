@@ -1,3 +1,4 @@
+package ordinatoreDiOrari;
 
 public class Orario implements Comparabile {
 

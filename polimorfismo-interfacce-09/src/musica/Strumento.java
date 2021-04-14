@@ -1,3 +1,4 @@
+package musica;
 
 public interface Strumento {
 

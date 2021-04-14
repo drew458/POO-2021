@@ -4,7 +4,6 @@ package forme;
 public class Cerchio implements Forma{
 
 	private int raggio;
-	
 	private Punto centro;
 	
 	public Cerchio(Punto centro, int raggio) {
@@ -17,8 +16,11 @@ public class Cerchio implements Forma{
 		this.centro.setY(this.centro.getY() + deltaY);
 	}
 	
-	public Punto getCentro() { return this.centro; }
+	public Punto getCentro() { 
+		return this.centro; 
+	}
 	
-	public int getRaggio() { return this.raggio; }
-	
+	public int getRaggio() { 
+		return this.raggio; 
+	}
 }

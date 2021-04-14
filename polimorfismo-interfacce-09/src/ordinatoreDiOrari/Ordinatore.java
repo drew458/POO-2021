@@ -1,3 +1,4 @@
+package ordinatoreDiOrari;
 
 public class Ordinatore {
 	public static void ordina(Comparabile[] lista){
