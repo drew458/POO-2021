@@ -11,18 +11,20 @@ public class ComandoVai implements Comando {
 
 	@Override
 	public void esegui(Partita partita) {
-		if(direzione==null)
-			console.mostraMessaggio("Dove vuoi andare ?");
+		Stanza stanzaCorrente = partita.getStanzaCorrente();
 		Stanza prossimaStanza = null;
-		prossimaStanza = partita.getStanzaCorrente().getStanzaAdiacente(direzione);
-		if (prossimaStanza == null)
-			console.mostraMessaggio("Direzione inesistente");
-		else {
-			partita.setStanzaCorrente(prossimaStanza);
-			int cfu = partita.getCfu();
-			partita.setCfu(cfu--);
+		if(this.direzione==null) {
+			console.mostraMessaggio("Dove vuoi andare? Devi specificare una direzione");
+			return;
 		}
-		this.console.mostraMessaggio(partita.getStanzaCorrente().getDescrizione());
+		prossimaStanza = stanzaCorrente.getStanzaAdiacente(this.direzione);
+		if(prossimaStanza==null) {
+			console.mostraMessaggio("Direzione inesistente");
+			return;
+		}
+		partita.setStanzaCorrente(prossimaStanza);
+		console.mostraMessaggio(partita.getStanzaCorrente().getNome());
+		partita.getGiocatore().setCfu(partita.getGiocatore().getCfu()-1);
 	}
 
 

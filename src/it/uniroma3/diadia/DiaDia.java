@@ -58,8 +58,10 @@ public class DiaDia {
 	 * @return true se l'istruzione è eseguita e il gioco continua, false altrimenti.
 	 */
 	private boolean processaIstruzione(String istruzione) {
+		
 		Comando comandoDaEseguire;
 		FabbricaDiComandi factory = new FabbricaDiComandiFisarmonica();
+		
 		comandoDaEseguire = factory.costruisciComando(istruzione, this.console);
 		comandoDaEseguire.esegui(this.partita); 
 		if (this.partita.vinta())
