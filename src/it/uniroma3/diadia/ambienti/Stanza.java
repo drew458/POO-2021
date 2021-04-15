@@ -163,16 +163,21 @@ public class Stanza {
 
 	/**
 	 * Rimuove un attrezzo dalla stanza (ricerca in base al nome).
-	 * @param nomeAttrezzo
+	 * @param attrezzo
 	 * @return true se l'attrezzo e' stato rimosso, false altrimenti
 	 */
-	public boolean removeAttrezzo(String nomeAttrezzo) {
-		for (Attrezzo attrezzo : this.attrezzi) {
-			if (attrezzo.getNome().equals(nomeAttrezzo))
-				attrezzo = null;
-			return true;
+	public boolean removeAttrezzo(Attrezzo attrezzo) {
+		boolean rimosso = false;
+		int i = 0;
+		while(!rimosso && i < this.attrezzi.length) {
+			if(attrezzi[i] != null)
+				if(attrezzi[i].getNome().equals(attrezzo.getNome())) {
+					attrezzi[i] = null;
+					rimosso = true;
+				}
+			i++;
 		}
-		return false;
+		return rimosso;
 	}
 
 
