@@ -35,6 +35,11 @@ public class Partita {
 		return this.labirinto.getStanzaVincente();
 	}
 	
+	
+	/**
+	 * imposta la stanza corrente
+	 * @param una stanza
+	 */
 	public void setStanzaCorrente(Stanza stanzaCorrente) {
 		this.stanzaCorrente = stanzaCorrente;
 	}
