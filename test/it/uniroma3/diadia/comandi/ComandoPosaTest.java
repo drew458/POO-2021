@@ -14,7 +14,6 @@ public class ComandoPosaTest {
 	
 	private static final String NOME_ATTREZZO_INIZIALE = "attrezzo iniziale";
 	
-	private IOConsole console;
 	private Comando comandoPosa;
 	private Partita partita;
 	

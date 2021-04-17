@@ -1,6 +1,6 @@
 package it.uniroma3.diadia.comandi;
 
-import it.uniroma3.diadia.IOConsole;
+import it.uniroma3.diadia.IO;
 import it.uniroma3.diadia.Partita;
 
 
@@ -12,13 +12,13 @@ public class ComandoGuarda implements Comando {
 	
 	static final private String NOME = "guarda";
 	
-	private IOConsole console;
+	private IO io;
 
 	@Override
 	public void esegui(Partita partita) {
 		if(partita.isFinita() || partita.giocatoreIsVivo()==false)
 			return;
-		this.console.mostraMessaggio("La partita è in corso. Il giocatore è vivo e si trova nella stanza " + partita.getStanzaCorrente().getDescrizione() +""
+		this.io.mostraMessaggio("La partita è in corso. Il giocatore è vivo e si trova nella stanza " + partita.getStanzaCorrente().getDescrizione() +""
 				+ " con " + partita.getCfu() + " CFU a disposizione.");
 	}
 
@@ -29,8 +29,8 @@ public class ComandoGuarda implements Comando {
 	}
 
 	@Override
-	public void setIO(IOConsole console) {
-		this.console = console;
+	public void setIO(IO io) {
+		this.io = io;
 
 	}
 

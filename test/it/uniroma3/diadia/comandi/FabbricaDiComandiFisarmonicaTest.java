@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import it.uniroma3.diadia.IOConsole;
+import it.uniroma3.diadia.IO;
 
 public class FabbricaDiComandiFisarmonicaTest {
 	
@@ -27,63 +27,48 @@ public class FabbricaDiComandiFisarmonicaTest {
 	
 	
 	private FabbricaDiComandiFisarmonica factory;
-	private IOConsole console;
-	private Comando comandoVai;
-	private Comando comandoPrendi;
-	private Comando comandoPosa;
-	private Comando ComandoAiuto;
-	private Comando ComandoFine;
-	private Comando ComandoGuarda;
-	private Comando comandoNonValido;
+	private IO io;
 	
 
 	@Before
 	public void setUp() throws Exception {
 		this.factory = new FabbricaDiComandiFisarmonica();
-		this.console = new IOConsole();
-		this.comandoVai = new ComandoVai();
-		this.comandoPrendi = new ComandoPrendi();
-		this.comandoPosa = new ComandoPosa();
-		this.ComandoAiuto = new ComandoAiuto();
-		this.ComandoFine = new ComandoFine();
-		this.ComandoGuarda = new ComandoGuarda();
-		this.comandoNonValido = new ComandoNonValido();
 	}
 
 	@Test
 	public void testCostruisciComandoVai() {
-		Comando comando = this.factory.costruisciComando(COMANDO_VAI, console);
+		Comando comando = this.factory.costruisciComando(COMANDO_VAI, io);
 		assertEquals(COMANDO_VAI_RETURN, comando.getNome());
 	}
 	
 	@Test
 	public void testCostruisciComandoPrendi() {
-		Comando comando = this.factory.costruisciComando(COMANDO_PRENDI, console);
+		Comando comando = this.factory.costruisciComando(COMANDO_PRENDI, io);
 		assertEquals(COMANDO_PRENDI_RETURN, comando.getNome());	}
 	
 	@Test
 	public void testCostruisciComandoPosa() {
-		Comando comando = this.factory.costruisciComando(COMANDO_POSA, console);
+		Comando comando = this.factory.costruisciComando(COMANDO_POSA, io);
 		assertEquals(COMANDO_POSA_RETURN, comando.getNome());	}
 	
 	@Test
 	public void testCostruisciComandoAiuto() {
-		Comando comando = this.factory.costruisciComando(COMANDO_AIUTO, console);
+		Comando comando = this.factory.costruisciComando(COMANDO_AIUTO, io);
 		assertEquals(COMANDO_AIUTO_RETURN, comando.getNome());	}
 	
 	@Test
 	public void testCostruisciComandoFine() {
-		Comando comando = this.factory.costruisciComando(COMANDO_FINE, console);
+		Comando comando = this.factory.costruisciComando(COMANDO_FINE, io);
 		assertEquals(COMANDO_FINE_RETURN, comando.getNome());	}
 	
 	@Test
 	public void testCostruisciComandoGuarda() {
-		Comando comando = this.factory.costruisciComando(COMANDO_GUARDA, console);
+		Comando comando = this.factory.costruisciComando(COMANDO_GUARDA, io);
 		assertEquals(COMANDO_GUARDA_RETURN, comando.getNome());	}
 	
 	@Test
 	public void testCostruisciComandoNonValido() {
-		Comando comando = this.factory.costruisciComando(COMANDO_NON_VALIDO, console);
+		Comando comando = this.factory.costruisciComando(COMANDO_NON_VALIDO, io);
 		assertEquals(COMANDO_NON_VALIDO_RETURN, comando.getNome());	}
 
 }

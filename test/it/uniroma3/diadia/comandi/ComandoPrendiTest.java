@@ -1,6 +1,5 @@
 package it.uniroma3.diadia.comandi;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -9,14 +8,12 @@ import org.junit.Test;
 
 import it.uniroma3.diadia.IOConsole;
 import it.uniroma3.diadia.Partita;
-import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 public class ComandoPrendiTest {
 	
 	private static final String NOME_ATTREZZO_INIZIALE = "attrezzo iniziale";
 	
-	private IOConsole console;
 	private Comando comandoPrendi;
 	private Partita partita;
 	

@@ -1,6 +1,6 @@
 package it.uniroma3.diadia.comandi;
 
-import it.uniroma3.diadia.IOConsole;
+import it.uniroma3.diadia.IO;
 import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
@@ -12,7 +12,7 @@ public class ComandoPosa implements Comando {
 	
 	static final private String NOME = "posa";
 
-	private IOConsole console;
+	private IO io;
 	private String attrezzo;
 
 	@Override
@@ -20,12 +20,12 @@ public class ComandoPosa implements Comando {
 		Attrezzo attrezzoDaPosare = partita.getGiocatore().getBorsa().getAttrezzo(this.attrezzo);
 
 		if(attrezzoDaPosare == null) {
-			console.mostraMessaggio("Attrezzo non presente nella stanza!");
+			io.mostraMessaggio("Attrezzo non presente nella stanza!");
 			return;
 		}
 		partita.getGiocatore().getBorsa().removeAttrezzo(this.attrezzo);
 		partita.getStanzaCorrente().addAttrezzo(attrezzoDaPosare);
-		this.console.mostraMessaggio("Attrezzo " + this.attrezzo + " posato!");
+		this.io.mostraMessaggio("Attrezzo " + this.attrezzo + " posato!");
 	}
 
 	@Override
@@ -34,8 +34,8 @@ public class ComandoPosa implements Comando {
 	}
 
 	@Override
-	public void setIO(IOConsole console) {
-		this.console = console;
+	public void setIO(IO io) {
+		this.io = io;
 	}
 
 	@Override
