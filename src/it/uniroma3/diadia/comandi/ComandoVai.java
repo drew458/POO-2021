@@ -9,6 +9,8 @@ import it.uniroma3.diadia.ambienti.Stanza;
  * e ne stampa il nome, altrimenti stampa un messaggio di errore
  */
 public class ComandoVai implements Comando {
+	
+	static final private String NOME = "vai";
 
 	private String direzione;
 	private IOConsole console;
@@ -40,6 +42,20 @@ public class ComandoVai implements Comando {
 	@Override
 	public void setIO(IOConsole console) {
 		this.console = console;
+	}
+
+
+	@Override
+	public String getParametro() {
+		return null;
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public String getNome() {
+		return NOME;
 	}
 
 }

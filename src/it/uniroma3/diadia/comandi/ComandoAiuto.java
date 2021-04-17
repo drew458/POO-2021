@@ -10,6 +10,7 @@ import it.uniroma3.diadia.Partita;
 public class ComandoAiuto implements Comando {
 	
 	static final private String[] elencoComandi = {"vai", "aiuto", "fine", "prendi", "posa"};
+	static final private String NOME = "aiuto";
 	
 	private IOConsole console;
 
@@ -29,6 +30,19 @@ public class ComandoAiuto implements Comando {
 	@Override
 	public void setIO(IOConsole console) {
 		this.console = console;
+	}
+
+	@Override
+	public String getParametro() {
+		return null;
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getNome() {
+		return NOME;
+		
 	}
 
 }

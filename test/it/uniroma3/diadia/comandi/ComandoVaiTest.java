@@ -27,6 +27,15 @@ public class ComandoVaiTest {
 		this.partita.setStanzaCorrente(this.stanzaIniziale);
 		this.comandoDaEseguire.setIO(new IOConsole());
 	}
+	
+	@Test
+	public void testEseguiStanzaPresente() {
+		Stanza stanzaVincente = new Stanza("stanza vincente");
+		this.stanzaIniziale.impostaStanzaAdiacente(DIREZIONE_NORD, stanzaVincente);
+		this.comandoDaEseguire.setParametro(DIREZIONE_NORD);
+		this.comandoDaEseguire.esegui(this.partita);
+		assertEquals("stanza vincente", this.partita.getStanzaCorrente().getNome());
+	}
 		
 	@Test
 	public void testEseguiDirezioneInesistenteStanzaNonPresente() {
@@ -56,15 +65,6 @@ public class ComandoVaiTest {
 		this.comandoDaEseguire.setParametro(DIREZIONE_NORD);
 		this.comandoDaEseguire.esegui(this.partita);
 		assertEquals("stanza iniziale", this.partita.getStanzaCorrente().getNome());
-	}
-	
-	@Test
-	public void testEseguiStanzaPresente() {
-		Stanza stanzaVincente = new Stanza("stanza vincente");
-		this.stanzaIniziale.impostaStanzaAdiacente(DIREZIONE_NORD, stanzaVincente);
-		this.comandoDaEseguire.setParametro(DIREZIONE_NORD);
-		this.comandoDaEseguire.esegui(this.partita);
-		assertEquals("stanza vincente", this.partita.getStanzaCorrente().getNome());
 	}
 
 }

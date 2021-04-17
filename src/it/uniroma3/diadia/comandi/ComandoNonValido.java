@@ -5,6 +5,8 @@ import it.uniroma3.diadia.Partita;
 
 public class ComandoNonValido implements Comando {
 	
+	static final private String NOME = "non valido";
+	
 	public IOConsole console;
 
 	@Override
@@ -23,6 +25,18 @@ public class ComandoNonValido implements Comando {
 	public void setIO(IOConsole console) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public String getParametro() {
+		return null;
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getNome() {
+		return NOME;		
 	}
 
 }
