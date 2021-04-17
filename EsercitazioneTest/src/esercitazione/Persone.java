@@ -1,4 +1,4 @@
-package esercitazione.test;
+package esercitazione;
 
 public class Persone {
 	private String[] nomi;
