@@ -4,25 +4,26 @@ import it.uniroma3.diadia.IOConsole;
 import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
+/**
+ *  gli attrezzi presi vengono rimossi dalla stanza e aggiunti alla borsa
+ *
+ */
 public class ComandoPrendi implements Comando {
-	
+
 	private IOConsole console;
 	private String attrezzo;
 
 	@Override
 	public void esegui(Partita partita) {
-		if(partita.getStanzaCorrente().getAttrezzo(this.attrezzo)==null)
-			console.mostraMessaggio("Che attrezzo vuoi prendere?");
-		if(partita.getStanzaCorrente().hasAttrezzo(this.attrezzo) == false) {
+		Attrezzo attrezzoDaPrendere = partita.getStanzaCorrente().getAttrezzo(this.attrezzo);
+
+		if(attrezzoDaPrendere == null) {
 			console.mostraMessaggio("Attrezzo non presente nella stanza!");
 			return;
 		}
-		else {
-			Attrezzo attrezzoDaPrendere = partita.getStanzaCorrente().getAttrezzo(this.attrezzo);
-			partita.getStanzaCorrente().removeAttrezzo(attrezzoDaPrendere);
-			partita.getGiocatore().getBorsa().addAttrezzo(attrezzoDaPrendere);
-			this.console.mostraMessaggio("Attrezzo " + this.attrezzo + " preso!");
-		}
+		partita.getStanzaCorrente().removeAttrezzo(attrezzoDaPrendere);
+		partita.getGiocatore().getBorsa().addAttrezzo(attrezzoDaPrendere);
+		this.console.mostraMessaggio("Attrezzo " + this.attrezzo + " preso!");
 
 	}
 

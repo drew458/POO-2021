@@ -36,6 +36,7 @@ public class ComandoPrendiTest {
 		this.comandoPrendi.setParametro(NOME_ATTREZZO_INIZIALE);
 		this.comandoPrendi.esegui(partita);
 		assertTrue(this.partita.getGiocatore().getBorsa().hasAttrezzo(NOME_ATTREZZO_INIZIALE));
+		assertFalse(this.partita.getStanzaCorrente().hasAttrezzo(NOME_ATTREZZO_INIZIALE));
 	}
 
 	@Test
@@ -44,6 +45,7 @@ public class ComandoPrendiTest {
 		this.comandoPrendi.setParametro(attrezzoModificato);
 		this.comandoPrendi.esegui(partita);
 		assertFalse(this.partita.getGiocatore().getBorsa().hasAttrezzo(attrezzoModificato));
+		assertTrue(this.partita.getStanzaCorrente().hasAttrezzo(NOME_ATTREZZO_INIZIALE));
 	}
 	
 	@Test
@@ -52,6 +54,7 @@ public class ComandoPrendiTest {
 		this.comandoPrendi.setParametro(attrezzoModificato);
 		this.comandoPrendi.esegui(partita);
 		assertFalse(this.partita.getGiocatore().getBorsa().hasAttrezzo(attrezzoModificato));
+		assertTrue(this.partita.getStanzaCorrente().hasAttrezzo(NOME_ATTREZZO_INIZIALE));
 	}
 
 }

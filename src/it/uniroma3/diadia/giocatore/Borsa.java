@@ -35,11 +35,11 @@ public class Borsa {
 	}
 	
 	public Attrezzo getAttrezzo(String nomeAttrezzo) {
-		Attrezzo a = null;
+		Attrezzo attrezzoCercato = null;
 		for (int i= 0; i<this.numeroAttrezzi; i++)
-			if (this.attrezzi[i].getNome().equals(nomeAttrezzo))
-				a = attrezzi[i];
-		return a;
+			if (attrezzi[i] != null && this.attrezzi[i].getNome().equals(nomeAttrezzo))
+				attrezzoCercato = attrezzi[i];
+		return attrezzoCercato;
 	}
 	
 	public int getPeso() {
