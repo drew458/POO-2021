@@ -54,18 +54,19 @@ public class StanzaBloccataTest {
 	@Test
 	public void testGetDescrizioneStanzaNonBloccata() {
 		this.stanzaBloccata.addAttrezzo(attrezzoPassepartout);
-		assertEquals(this.GET_DESCRIZIONE_RETURN, this.stanzaBloccata.getDescrizione());
+		assertEquals(GET_DESCRIZIONE_RETURN, this.stanzaBloccata.getDescrizione());
 	}
 	
 	@Test
 	public void testGetDescrizioneStanzaBloccata() {
-		assertEquals(this.STANZA_BLOCCATA_RETURN, this.stanzaBloccata.getDescrizione());
+		assertEquals(STANZA_BLOCCATA_RETURN, this.stanzaBloccata.getDescrizione());
 	}
 	
 	@Test
 	public void testGetDescrizioneStanzaBloccataConAttrezzoSbagliato() {
 		Attrezzo attrezzoSbagliato = new Attrezzo(NOME_ATTREZZO_SBLOCCA_SBAGLIATO, 3);
-		assertEquals(this.STANZA_BLOCCATA_RETURN, this.stanzaBloccata.getDescrizione());
+		this.stanzaBloccata.addAttrezzo(attrezzoSbagliato);
+		assertEquals(STANZA_BLOCCATA_RETURN, this.stanzaBloccata.getDescrizione());
 	}
 
 }
