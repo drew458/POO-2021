@@ -1,12 +1,17 @@
 package it.uniroma3.diadia.comandi;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Before;
 import org.junit.Test;
 
+import it.uniroma3.diadia.DiaDia;
 import it.uniroma3.diadia.IOConsole;
+import it.uniroma3.diadia.IOSimulator;
 import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.ambienti.Stanza;
+import it.uniroma3.diadia.fixture.Fixture;
 
 public class ComandoVaiTest {
 	
@@ -63,6 +68,22 @@ public class ComandoVaiTest {
 		this.comandoDaEseguire.setParametro(DIREZIONE_NORD);
 		this.comandoDaEseguire.esegui(this.partita);
 		assertEquals("stanza iniziale", this.partita.getStanzaCorrente().getNome());
+	}
+	
+	@Test
+	public void testPartitaConComandoVai() {
+		String[] comandiDaEseguire = {"vai sud", "fine"};
+		IOSimulator io = Fixture.creaSimulazionePartitaEGioca(comandiDaEseguire);
+		assertTrue(io.hasNextMessaggio());
+		assertEquals(DiaDia.MESSAGGIO_BENVENUTO, io.nextMessaggio());
+		assertTrue(io.hasNextMessaggio());
+		assertContains("Aula N10", io.nextMessaggio());
+		assertTrue(io.hasNextMessaggio());
+		assertEquals(ComandoFine.MESSAGGIO_FINE, io.nextMessaggio());
+	}
+	
+	public void assertContains(String expected, String interaRiga) {
+		assertTrue(interaRiga.contains(expected));
 	}
 
 }
