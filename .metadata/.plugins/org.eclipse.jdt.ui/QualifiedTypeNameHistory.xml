@@ -10,4 +10,9 @@
     <fullyQualifiedTypeName name="forme.Rettangolo"/>
     <fullyQualifiedTypeName name="forme.GruppoDiForme"/>
     <fullyQualifiedTypeName name="Persona"/>
+    <fullyQualifiedTypeName name="CalcolatoreDiArea"/>
+    <fullyQualifiedTypeName name="Cerchio"/>
+    <fullyQualifiedTypeName name="Quadrato"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="CoppiaGeneric"/>
 </qualifiedTypeNameHistroy>
