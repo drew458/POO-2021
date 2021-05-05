@@ -1,13 +1,16 @@
 package it.uniroma3.diadia.giocatore;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 public class Borsa {
 	
 	public final static int DEFAULT_PESO_MAX_BORSA = 10;
 	
-	private Attrezzo[] attrezzi;
-	private int numeroAttrezzi;
+	private List<Attrezzo> attrezzi;
 	private int pesoMax;
 	
 	public Borsa() {
@@ -16,18 +19,13 @@ public class Borsa {
 	
 	public Borsa(int pesoMax) {
 		this.pesoMax = pesoMax;
-		this.attrezzi = new Attrezzo[10]; // speriamo che bastino...
-		this.numeroAttrezzi = 0;
+		this.attrezzi = new ArrayList<Attrezzo>();
 	}
 	
 	public boolean addAttrezzo(Attrezzo attrezzo) {
 		if (this.getPeso() + attrezzo.getPeso() > this.getPesoMax())
 			return false;
-		if (this.numeroAttrezzi==10)
-			return false;
-		this.attrezzi[this.numeroAttrezzi] = attrezzo;
-		this.numeroAttrezzi++;
-		return true;
+		return this.attrezzi.add(attrezzo);
 	}
 	
 	public int getPesoMax() {
@@ -44,8 +42,8 @@ public class Borsa {
 	
 	public int getPeso() {
 		int peso = 0;
-		for (int i= 0; i<this.numeroAttrezzi; i++)
-			peso += this.attrezzi[i].getPeso();
+		for (Attrezzo a : this.attrezzi)
+			peso += a.getPeso();
 		return peso;
 	}
 	
@@ -60,22 +58,20 @@ public class Borsa {
 	/**
 	 * Rimuove un attrezzo dalla borsa (ricerca in base al nome).
 	 * @param nomeAttrezzo
-	 * @return true se l'attrezzo e' stato rimosso, false altrimenti
+	 * @return l'attrezzo rimosso, null altrimenti
 	 */
-	public boolean removeAttrezzo(String nomeAttrezzo) {
+	public Attrezzo removeAttrezzo(String nomeAttrezzo) {
 		Attrezzo attrezzo = null;
-		int i = 0;
-		while(attrezzo == null && i < this.attrezzi.length) {
-			if(this.attrezzi[i] != null) {
-				if(this.attrezzi[i].getNome().equals(nomeAttrezzo)) {
-					attrezzo = this.attrezzi[i];
-					this.attrezzi[i] = null;
-					return true;
-				}
+		
+		Iterator<Attrezzo> iteratore = this.attrezzi.iterator();
+		while(iteratore.hasNext()) {
+			attrezzo = iteratore.next();
+			if(attrezzo.getNome().equals(nomeAttrezzo)) {
+				iteratore.remove();
+				return attrezzo;
 			}
-			i++;
 		}
-		return false;
+		return null;
 	}
 	
 	public String toString() {
