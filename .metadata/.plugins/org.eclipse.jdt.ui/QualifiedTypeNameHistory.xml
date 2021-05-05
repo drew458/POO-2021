@@ -15,4 +15,6 @@
     <fullyQualifiedTypeName name="Quadrato"/>
     <fullyQualifiedTypeName name="java.lang.Object"/>
     <fullyQualifiedTypeName name="CoppiaGeneric"/>
+    <fullyQualifiedTypeName name="java.awt.List"/>
+    <fullyQualifiedTypeName name="IteratorTest"/>
 </qualifiedTypeNameHistroy>
