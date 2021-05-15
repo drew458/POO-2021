@@ -2,9 +2,12 @@ package tetris.pozzo;
 
 import static tetris.Costanti.COLORE_BORDO;
 
+import java.util.Comparator;
 import java.util.NavigableSet;
 import java.util.Set;
+import java.util.TreeSet;
 
+import tetris.Costanti;
 import tetris.tetramino.Tetramino;
 
 /**
@@ -44,14 +47,14 @@ public class Pozzo {
 	 * include 2 colonne di celle per i bordi
 	 */
 	static final public int LARGHEZZA = 12; // in celle
-	
+
 	/**
 	 * Altezza di default del pozzo;
 	 * 	include 1 riga di celle per il fondo
 	 */
 	static final public int ALTEZZA   = 24; // in celle
 
-	
+
 	/* serie di metodi factory per creare celle lungo il bordo */
 	static final private Cella bordoDX(int riga, int larghezzaTotale) {
 		return new Cella(larghezzaTotale-1,riga, COLORE_BORDO);
@@ -72,10 +75,10 @@ public class Pozzo {
 	 *      parte di questo insieme
 	 */
 	final private NavigableSet<Cella> celle;
-	
+
 	final private int l;
 	final private int a;
-	
+
 	/**
 	 * Crea un pozzo delle dimensioni di default (12x24 bordi inclusi)
 	 */
@@ -91,7 +94,7 @@ public class Pozzo {
 	 * @param h altezza
 	 */
 	public Pozzo(int l, int h) {
-		this.celle = null; /*DA COMPLETARE*/
+		this.celle = new TreeSet<>(); /*DA COMPLETARE*/
 		this.l = l;
 		this.a = h;
 		this.addBordo(l, h);
@@ -102,7 +105,7 @@ public class Pozzo {
 		this.addBordoDX(h, l);    // lato dx alto h
 		this.addFondo(l, h); // fondo largo l
 	}
-	
+
 	private void addBordoSX(int h) {
 		for (int riga=0; riga<h; riga++) {
 			this.celle.add(bordoSX(riga));
@@ -124,7 +127,7 @@ public class Pozzo {
 	public boolean contiene(Cella c) {
 		return this.celle.contains(c);
 	}
-	
+
 	public Set<Cella> getCelle() {
 		return this.celle;
 	}
@@ -139,22 +142,22 @@ public class Pozzo {
 	public int aggiungiCelleErimuoviRigheCompletate(Set<Cella> celle) {
 		/* aggiungi le nuove celle */
 		this.celle.addAll(celle);
-		
+
 		/* controlla le linee dalla più in basso verso l'alto (y decrescenti) */
 		final NavigableSet<Integer> righeCoinvolte = getInsiemeOrdinateY(celle);
 		int contatoreRimosse = 0;
 		while (!righeCoinvolte.isEmpty()) {
 			int rigaPiùInBasso = righeCoinvolte.pollLast() + contatoreRimosse; // y alta <-> riga bassa
-		
+
 			if (isCompleta(rigaPiùInBasso)) {
 				rimuoviRigaScendendoCelleSopra(rigaPiùInBasso);
 				contatoreRimosse++;
 			}
 		}
-		
+
 		return contatoreRimosse;
 	}
-	
+
 	/**
 	 * 
 	 * @param inputCelle - un insieme di celle
@@ -165,7 +168,10 @@ public class Pozzo {
 	 */
 	public NavigableSet<Integer> getInsiemeOrdinateY(Set<Cella> inputCelle) {
 		/* DA COMPLETARE (esercizio 2) */
-		return null;
+		NavigableSet<Integer> risultato = new TreeSet<>();
+		for(Cella cella : inputCelle)
+			risultato.add(cella.getPosizione().getY());
+		return risultato;
 	}
 
 	/**
@@ -196,9 +202,13 @@ public class Pozzo {
 	 */
 	public Set<Cella> getCelleDellaRigaSenzaBordo(int riga) {
 		/* DA COMPLETARE (senza iterazioni - esercizio 3) */
-		return null;
+		if(riga == this.a -1) return new TreeSet<>();
+		return new TreeSet<>(
+				this.celle.subSet(new Cella(0,riga,Costanti.COLORE_BORDO), false,
+						new Cella(this.l-1,riga, COLORE_BORDO), false)
+				);
 	}
-	
+
 	/**
 	 * 
 	 * @param riga
@@ -207,10 +217,26 @@ public class Pozzo {
 	 *         ordinate per Y decrescente delle rispettive posizioni, ed a
 	 *         parità di Y, per X.
 	 *         N.B. il risultato non include le celle del bordo! */
-	 
+
 	public NavigableSet<Cella> getCelleSopraRigaYdecrescente(int riga) {
 		/* DA COMPLETARE (senza iterazioni - esercizio 4) */
-		return null;
+		NavigableSet<Cella> righeSopra = new TreeSet<>(
+				new Comparator<Cella>() {
+					@Override
+					public int compare(Cella o1, Cella o2) {
+						int xDiff = o1.getPosizione().getX() - o2.getPosizione().getX();
+						if(xDiff != 0)
+							return xDiff;
+						return o1.getPosizione().getY() - o2.getPosizione().getY();
+					}
+				});
+		righeSopra.addAll(this.celle.headSet(new Cella(0,riga,COLORE_BORDO),false));
+		NavigableSet<Cella> risultato = new TreeSet<>(new ComparatoreCelleDecrescente());
+		risultato.addAll(
+				righeSopra.subSet(new Cella(1,0,Costanti.COLORE_BORDO), true,
+						new Cella(this.l-1,0,Costanti.COLORE_BORDO),false)
+				);
+		return risultato;
 	}
 
 }

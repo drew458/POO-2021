@@ -5,7 +5,7 @@ package tetris.pozzo;
  * ascissa (x) ed ordinata (y), all'interno del {@link Pozzo}.
  * 
  */
-public class Posizione {
+public class Posizione implements Comparable<Posizione>{
 
 	private int x;
 	
@@ -38,6 +38,24 @@ public class Posizione {
 	@Override
 	public String toString() {
 		return "("+getX()+","+getY()+")";
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.x + this.y * 31;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		Posizione that = (Posizione)obj;
+		return this.x == that.getX() && this.y == that.getY();
+	}
+
+	@Override
+	public int compareTo(Posizione o) {
+		if(this.y == o.getY())
+			return this.x - o.getX();
+		return this.y - o.getY();
 	}
 
 }
