@@ -3,6 +3,7 @@ package it.uniroma3.diadia.ambienti;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
@@ -102,14 +103,9 @@ public class Stanza {
 		StringBuilder risultato = new StringBuilder();
 		risultato.append(this.nome);
 		risultato.append("\nUscite: ");
-		for (String direzione : this.direzioni)
-			if (direzione!=null)
-				risultato.append(" " + direzione);
+		risultato.append(this.direzione2stanzaAdiacente.keySet().toString());
 		risultato.append("\nAttrezzi nella stanza: ");
-		for (Attrezzo attrezzo : this.attrezzi) {
-			if(attrezzo != null)
-				risultato.append(attrezzo.toString()+" ");
-		}
+		risultato.append(this.nome2attrezzo.values().toString());
 		return risultato.toString();
 	}
 
@@ -118,13 +114,7 @@ public class Stanza {
 	 * @return true se l'attrezzo esiste nella stanza, false altrimenti.
 	 */
 	public boolean hasAttrezzo(String nomeAttrezzo) {
-		boolean trovato;
-		trovato = false;
-		for (Attrezzo attrezzo : this.attrezzi) {
-			if (attrezzo!=null && attrezzo.getNome().equals(nomeAttrezzo))
-				trovato = true;
-		}
-		return trovato;
+		return this.nome2attrezzo.containsKey(nomeAttrezzo);
 	}
 
 	/**
@@ -134,13 +124,7 @@ public class Stanza {
 	 * 		   null se l'attrezzo non e' presente.
 	 */
 	public Attrezzo getAttrezzo(String nomeAttrezzo) {
-		Attrezzo attrezzoCercato;
-		attrezzoCercato = null;
-		for (Attrezzo attrezzo : this.attrezzi) {
-			if (attrezzo != null && attrezzo.getNome().equals(nomeAttrezzo))
-				attrezzoCercato = attrezzo;
-		}
-		return attrezzoCercato;	
+		return this.nome2attrezzo.get(nomeAttrezzo);
 	}
 
 	/**
@@ -149,25 +133,15 @@ public class Stanza {
 	 * @return true se l'attrezzo e' stato rimosso, false altrimenti
 	 */
 	public boolean removeAttrezzo(Attrezzo attrezzo) {
-		boolean rimosso = false;
-		int i = 0;
-		while(!rimosso && i < this.attrezzi.length) {
-			if(attrezzi[i] != null)
-				if(attrezzi[i].getNome().equals(attrezzo.getNome())) {
-					attrezzi[i] = null;
-					rimosso = true;
-				}
-			i++;
-		}
-		return rimosso;
+		Attrezzo a = this.nome2attrezzo.remove(attrezzo.getNome());
+		if(a == null)
+			return false;
+		return true;
 	}
 
 
-	public String[] getDirezioni() {
-		String[] direzioni = new String[this.numeroStanzeAdiacenti];
-		for(int i=0; i<this.numeroStanzeAdiacenti; i++)
-			direzioni[i] = this.direzioni[i];
-		return direzioni;
+	public Set<String> getDirezioni() {
+		return this.direzione2stanzaAdiacente.keySet();
 	}
 
 }
