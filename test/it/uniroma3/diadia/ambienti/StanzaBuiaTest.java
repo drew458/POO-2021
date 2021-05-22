@@ -11,7 +11,7 @@ public class StanzaBuiaTest {
 	
 	private static final String NOME_ATTREZZO_LANTERNA = "lanterna";
 	private static final String NOME_STANZA_BUIA = "stanza buia";
-	private static final String STANZA_NONBUIA_RETURN = "stanza buia\n" + "Uscite: \n" + "Attrezzi nella stanza: lanterna (4kg) ";
+	private static final String STANZA_NONBUIA_RETURN = "stanza buia\n" + "Uscite: []\n" + "Attrezzi nella stanza: [lanterna (4kg)]";
 	private static final String STANZA_BUIA_RETURN = "Qui c'è buio pesto";
 	
 	private StanzaBuia stanzaBuia;

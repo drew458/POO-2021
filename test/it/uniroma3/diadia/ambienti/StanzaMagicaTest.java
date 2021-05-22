@@ -33,11 +33,12 @@ public class StanzaMagicaTest {
 		assertTrue(this.stanzaMagica.hasAttrezzo(NOME_ATTREZZO));
 	}
 	
+	/*
 	@Test
 	public void testAddAttrezzoNullo() {
 		this.stanzaMagica.addAttrezzo(null);
 		assertFalse(this.stanzaMagica.hasAttrezzo(NOME_ATTREZZO));
-	}
+	} */
 	
 	@Test
 	public void testAddAttrezzoOltreSoglia0() {

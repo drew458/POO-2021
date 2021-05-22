@@ -5,6 +5,10 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Arrays;
+import java.util.Set;
+import java.util.TreeSet;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -102,11 +106,22 @@ public class BorsaTest {
 		this.borsa.removeAttrezzo(ATTREZZO);
 		assertEquals(0, this.borsa.getPeso());
 	}
+	
+	@Test
+	public void testGetSortedSetOrdinatoPerPeso() {
+		creaAttrezzoEAggiungiBorsa(this.borsa, ATTREZZO, 1);
+		creaAttrezzoEAggiungiBorsa(this.borsa, "SecondoAttrezzo", 1);
+		Set<Attrezzo> expected = new TreeSet<Attrezzo>(Arrays.asList(new Attrezzo(ATTREZZO, 1),
+				new Attrezzo("SecondoAttrezzo", 1)));
+		assertEquals(expected, this.borsa.getSortedSetOrdinatoPerPeso());
+	}
 
 	private Attrezzo creaAttrezzoEAggiungiBorsa(Borsa borsa, String nomeAttrezzo, int peso) {
 		Attrezzo attrezzo = new Attrezzo(nomeAttrezzo, peso);
 		borsa.addAttrezzo(attrezzo);
 		return attrezzo;
 	}
+	
+	
 
 }

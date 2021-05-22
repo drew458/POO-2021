@@ -19,7 +19,7 @@ public class StanzaBloccataTest {
 	private static final String NOME_ATTREZZO_PASSEPARTOUT = "passepartout";
 	
 	private static final String STANZA_BLOCCATA_RETURN = "Qui è tutto bloccato!";
-	private static final String GET_DESCRIZIONE_RETURN = "stanza bloccata\n" + "Uscite:  nord\n" + "Attrezzi nella stanza: passepartout (2kg) ";
+	private static final String GET_DESCRIZIONE_RETURN = "stanza bloccata\n" + "Uscite: [nord]\n" + "Attrezzi nella stanza: [passepartout (2kg)]";
 	
 	private StanzaBloccata stanzaBloccata;
 	private Stanza stanzaAdiacente;
