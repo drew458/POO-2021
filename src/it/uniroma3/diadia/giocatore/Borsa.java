@@ -97,6 +97,4 @@ public class Borsa {
 		return new TreeSet<Attrezzo>(this.attrezzi.values()) ;
 	}
 	
-	//First commit on Mac
-	
 }
