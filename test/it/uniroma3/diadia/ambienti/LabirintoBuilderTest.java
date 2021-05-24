@@ -39,7 +39,6 @@ public class LabirintoBuilderTest {
 	
 	@Test
 	public void testAddStanzaInizialeNull() {
-		Stanza stanza = new Stanza(NOME_STANZA_INIZIALE);
 		this.labirintoBuilder.addStanzaIniziale(null);
 		Stanza stanzaCreata = this.labirintoBuilder.getLabirinto().getStanzaCorrente();
 		assertNull(stanzaCreata.getNome());
@@ -55,7 +54,6 @@ public class LabirintoBuilderTest {
 	
 	@Test
 	public void testAddStanzaFinaleNull() {
-		Stanza stanza = new Stanza(NOME_STANZA_VINCENTE);
 		this.labirintoBuilder.addStanzaVincente(null);
 		Stanza stanzaCreata = this.labirintoBuilder.getLabirinto().getStanzaVincente();
 		assertNull(stanzaCreata.getNome());
@@ -72,7 +70,6 @@ public class LabirintoBuilderTest {
 	
 	@Test
 	public void testAddAttrezzo() {
-		Attrezzo attrezzo = new Attrezzo(NOME_ATTREZZO, PESO_ATTREZZO);
 		this.labirintoBuilder.addStanzaIniziale(NOME_STANZA_INIZIALE);
 		this.labirintoBuilder.addAttrezzo(NOME_ATTREZZO, PESO_ATTREZZO);
 		assertEquals(NOME_ATTREZZO, this.labirintoBuilder.getLabirinto().getStanzaCorrente().getAttrezzo(NOME_ATTREZZO).getNome());
@@ -80,7 +77,6 @@ public class LabirintoBuilderTest {
 	
 	@Test
 	public void testAddAttrezzoDueStanze() {
-		Attrezzo attrezzo = new Attrezzo(NOME_ATTREZZO, PESO_ATTREZZO);
 		this.labirintoBuilder.addStanzaIniziale(NOME_STANZA_INIZIALE);
 		this.labirintoBuilder.addStanzaVincente(NOME_STANZA_VINCENTE);
 		this.labirintoBuilder.addAttrezzo(NOME_ATTREZZO, PESO_ATTREZZO);
@@ -89,7 +85,6 @@ public class LabirintoBuilderTest {
 	
 	@Test
 	public void testAddAttrezzoQuattroStanze() {
-		Attrezzo attrezzo = new Attrezzo(NOME_ATTREZZO, PESO_ATTREZZO);
 		this.labirintoBuilder.addStanza(NOME_STANZA_INIZIALE);
 		this.labirintoBuilder.addStanza(NOME_STANZA_VINCENTE);
 		this.labirintoBuilder.addStanza(NOME_STANZA_GENERICA);
@@ -100,7 +95,6 @@ public class LabirintoBuilderTest {
 	
 	@Test
 	public void testAddAttrezzoStanzaNonUltima() {
-		Attrezzo attrezzo = new Attrezzo(NOME_ATTREZZO, PESO_ATTREZZO);
 		this.labirintoBuilder.addStanza(NOME_STANZA_INIZIALE);
 		this.labirintoBuilder.addStanza(NOME_STANZA_VINCENTE);
 		this.labirintoBuilder.addStanza(NOME_STANZA_GENERICA);
