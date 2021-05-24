@@ -9,8 +9,6 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import it.uniroma3.diadia.attrezzi.Attrezzo;
-
 public class LabirintoBuilderTest {
 	
 	private static final String NOME_STANZA_INIZIALE = "Stanza inziale";

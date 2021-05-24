@@ -1,42 +1,42 @@
 package it.uniroma3.diadia;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 public class IOSimulator implements IO {
 	
-	private String[] righeDaLeggere;
-	private int indiceRigheDaLeggere;
-	private String[] messaggiProdotti;
-	private int indiceMessaggiProdotti;
-	private int indiceMessaggiMostrati;
+	private List<String> messaggiProdotti;
+	private List<String> righeDaLeggere;
+	private Iterator<String> indiceRigheDaLeggere;
+	private Iterator<String> indiceMessaggiProdotti;
+		
 	
 	public IOSimulator(String[] righeDaLeggere) {
-		this.righeDaLeggere = righeDaLeggere;
-		this.indiceRigheDaLeggere = 0;
-		this.messaggiProdotti = new String[100];
-		this.indiceMessaggiProdotti = 0;
+		this.righeDaLeggere = new ArrayList<>();
+		this.messaggiProdotti = new ArrayList<>();
+		this.indiceRigheDaLeggere = this.righeDaLeggere.iterator();
+		this.indiceMessaggiProdotti = this.messaggiProdotti.iterator();
 	}
 
 	@Override
 	public void mostraMessaggio(String messaggio) {
-		this.messaggiProdotti[this.indiceMessaggiProdotti] = messaggio;
-		
-
+		if(indiceMessaggiProdotti.hasNext())
+			messaggio = this.indiceMessaggiProdotti.next();
 	}
 
 	@Override
 	public String leggiRiga() {
-		String rigaLetta = this.righeDaLeggere[this.indiceRigheDaLeggere];
-		this.indiceRigheDaLeggere++;
+		String rigaLetta = this.indiceRigheDaLeggere.next();
 		return rigaLetta;
 	}
 	
 	public String nextMessaggio() {
-		String next = this.messaggiProdotti[this.indiceMessaggiMostrati];
-		this.indiceMessaggiMostrati++;
-		return next;
+		return indiceMessaggiProdotti.next();
 	}
 	
 	public boolean hasNextMessaggio() {
-		return this.indiceMessaggiMostrati < this.indiceMessaggiProdotti;
+		return this.indiceMessaggiProdotti.hasNext();
 	}
 
 }
