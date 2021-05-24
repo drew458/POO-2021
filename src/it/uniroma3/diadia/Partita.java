@@ -20,7 +20,7 @@ public class Partita {
 	private Stanza stanzaCorrente;
 	
 	
-	public Partita(){
+	public Partita(Labirinto labirinto){
 		this.labirinto = new Labirinto();
 		this.finita = false;
 		this.giocatore = new Giocatore();

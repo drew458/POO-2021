@@ -20,28 +20,31 @@ public class LabirintoBuilder {
 	 * Aggiunge una stanza, che sarà anche iniziale
 	 * @param stanzaIniziale
 	 */
-	public void addStanzaIniziale(String stanzaIniziale) {
+	public LabirintoBuilder addStanzaIniziale(String stanzaIniziale) {
 		Stanza stanza = new Stanza(stanzaIniziale);
 		this.labirinto.setStanzaCorrente(stanza);
 		this.nome2stanza.put(stanzaIniziale, stanza);
 		this.ultimaStanza = stanza;
+		return this;
 	}
 	
 	/**
 	 * Specifica quale stanza sarà vincente
 	 * @param stanzaVincente
 	 */
-	public void addStanzaVincente(String stanzaVincente) {
+	public LabirintoBuilder addStanzaVincente(String stanzaVincente) {
 		Stanza stanza = new Stanza(stanzaVincente);
 		this.labirinto.setStanzaVincente(stanza);
 		this.nome2stanza.put(stanzaVincente, stanza);
 		this.ultimaStanza = stanza;
+		return this;
 	}
 	
-	public void addStanza(String nomeStanza) {
+	public LabirintoBuilder addStanza(String nomeStanza) {
 		Stanza stanza = new Stanza(nomeStanza);
 		this.nome2stanza.put(nomeStanza, stanza);
 		this.ultimaStanza = stanza;
+		return this;
 	}
 	
 	/**
@@ -49,9 +52,10 @@ public class LabirintoBuilder {
 	 * @param nomeAttrezzo
 	 * @param peso
 	 */
-	public void addAttrezzo(String nomeAttrezzo, int peso) {
+	public LabirintoBuilder addAttrezzo(String nomeAttrezzo, int peso) {
 		Attrezzo attrezzo = new Attrezzo(nomeAttrezzo, peso);
 		this.ultimaStanza.addAttrezzo(attrezzo);
+		return this;
 	}
 	
 	/**
@@ -60,10 +64,11 @@ public class LabirintoBuilder {
 	 * @param nomeStanzaDiArrivo
 	 * @param direzione
 	 */
-	public void addAdiacenza(String nomeStanzaDiPartenza, String nomeStanzaDiArrivo, String direzione) {
+	public LabirintoBuilder addAdiacenza(String nomeStanzaDiPartenza, String nomeStanzaDiArrivo, String direzione) {
 		Stanza stanzaDiPartenza = new Stanza(nomeStanzaDiPartenza);
 		Stanza stanzaDiArrivo = new Stanza(nomeStanzaDiArrivo);
 		stanzaDiPartenza.impostaStanzaAdiacente(direzione, stanzaDiArrivo);
+		return this;
 	}
 	
 	/**

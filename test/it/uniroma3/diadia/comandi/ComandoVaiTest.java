@@ -8,13 +8,16 @@ import org.junit.Test;
 
 import it.uniroma3.diadia.IOConsole;
 import it.uniroma3.diadia.Partita;
+import it.uniroma3.diadia.ambienti.Labirinto;
+import it.uniroma3.diadia.ambienti.LabirintoBuilder;
 import it.uniroma3.diadia.ambienti.Stanza;
 
 public class ComandoVaiTest {
-	
+
 	private static final String DIREZIONE_NORDOVEST = "nordovest";
 	private static final String DIREZIONE_NORD = "nord";
-	
+	private static final String NOME_STANZA_PARTENZA = "Partenza";
+
 	private Comando comandoDaEseguire;
 	private Partita partita;
 	private Stanza stanzaIniziale;
@@ -22,12 +25,15 @@ public class ComandoVaiTest {
 	@Before
 	public void setUp() {
 		this.comandoDaEseguire = new ComandoVai();
-		this.partita = new Partita();
+		Labirinto labirinto = new LabirintoBuilder()
+				.addStanzaIniziale(NOME_STANZA_PARTENZA)
+				.getLabirinto();
+		this.partita = new Partita(labirinto);
 		this.stanzaIniziale = new Stanza("stanza iniziale");
 		this.partita.setStanzaCorrente(this.stanzaIniziale);
 		this.comandoDaEseguire.setIO(new IOConsole());
 	}
-	
+
 	@Test
 	public void testEseguiStanzaPresente() {
 		Stanza stanzaVincente = new Stanza("stanza vincente");
@@ -36,14 +42,14 @@ public class ComandoVaiTest {
 		this.comandoDaEseguire.esegui(this.partita);
 		assertEquals("stanza vincente", this.partita.getStanzaCorrente().getNome());
 	}
-		
+
 	@Test
 	public void testEseguiDirezioneInesistenteStanzaNonPresente() {
 		this.comandoDaEseguire.setParametro(DIREZIONE_NORDOVEST);
 		this.comandoDaEseguire.esegui(this.partita);
 		assertEquals("stanza iniziale", this.partita.getStanzaCorrente().getNome());
 	}
-	
+
 	@Test
 	public void testEseguiDirezioneInesistenteStanzaPresente() {
 		Stanza stanzaVincente = new Stanza("stanza vincente");
@@ -52,21 +58,21 @@ public class ComandoVaiTest {
 		this.comandoDaEseguire.esegui(this.partita);
 		assertEquals("stanza iniziale", this.partita.getStanzaCorrente().getNome());
 	}
-	
+
 	@Test
 	public void testEseguiDirezioneNull() {
 		this.comandoDaEseguire.setParametro(null);
 		this.comandoDaEseguire.esegui(this.partita);
 		assertEquals("stanza iniziale", this.partita.getStanzaCorrente().getNome());
 	}
-	
+
 	@Test
 	public void testVaiStanzaNonPresente() {
 		this.comandoDaEseguire.setParametro(DIREZIONE_NORD);
 		this.comandoDaEseguire.esegui(this.partita);
 		assertEquals("stanza iniziale", this.partita.getStanzaCorrente().getNome());
 	}
-	
+
 	/*
 	@Test
 	public void testPartitaConComandoVai() {
@@ -84,7 +90,7 @@ public class ComandoVaiTest {
 		assertTrue(io.hasNextMessaggio());
 		assertEquals(ComandoFine.MESSAGGIO_FINE, io.nextMessaggio());
 	} */
-	
+
 	public void assertContains(String expected, String interaRiga) {
 		assertTrue(interaRiga.contains(expected));
 	}
