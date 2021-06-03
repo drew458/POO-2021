@@ -84,4 +84,8 @@ public class Partita {
 	public boolean giocatoreIsVivo() {
 		return this.getGiocatore().isVivo();
 	}
+	
+	public Labirinto getLabirinto() {
+		return this.labirinto;
+	}
 }

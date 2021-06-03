@@ -37,38 +37,38 @@ public class FabbricaDiComandiFisarmonicaTest {
 
 	@Test
 	public void testCostruisciComandoVai() {
-		Comando comando = this.factory.costruisciComando(COMANDO_VAI, io);
+		AbstractComando comando = this.factory.costruisciComando(COMANDO_VAI, io);
 		assertEquals(COMANDO_VAI_RETURN, comando.getNome());
 	}
 	
 	@Test
 	public void testCostruisciComandoPrendi() {
-		Comando comando = this.factory.costruisciComando(COMANDO_PRENDI, io);
+		AbstractComando comando = this.factory.costruisciComando(COMANDO_PRENDI, io);
 		assertEquals(COMANDO_PRENDI_RETURN, comando.getNome());	}
 	
 	@Test
 	public void testCostruisciComandoPosa() {
-		Comando comando = this.factory.costruisciComando(COMANDO_POSA, io);
+		AbstractComando comando = this.factory.costruisciComando(COMANDO_POSA, io);
 		assertEquals(COMANDO_POSA_RETURN, comando.getNome());	}
 	
 	@Test
 	public void testCostruisciComandoAiuto() {
-		Comando comando = this.factory.costruisciComando(COMANDO_AIUTO, io);
+		AbstractComando comando = this.factory.costruisciComando(COMANDO_AIUTO, io);
 		assertEquals(COMANDO_AIUTO_RETURN, comando.getNome());	}
 	
 	@Test
 	public void testCostruisciComandoFine() {
-		Comando comando = this.factory.costruisciComando(COMANDO_FINE, io);
+		AbstractComando comando = this.factory.costruisciComando(COMANDO_FINE, io);
 		assertEquals(COMANDO_FINE_RETURN, comando.getNome());	}
 	
 	@Test
 	public void testCostruisciComandoGuarda() {
-		Comando comando = this.factory.costruisciComando(COMANDO_GUARDA, io);
+		AbstractComando comando = this.factory.costruisciComando(COMANDO_GUARDA, io);
 		assertEquals(COMANDO_GUARDA_RETURN, comando.getNome());	}
 	
 	@Test
 	public void testCostruisciComandoNonValido() {
-		Comando comando = this.factory.costruisciComando(COMANDO_NON_VALIDO, io);
+		AbstractComando comando = this.factory.costruisciComando(COMANDO_NON_VALIDO, io);
 		assertEquals(COMANDO_NON_VALIDO_RETURN, comando.getNome());	}
 
 }

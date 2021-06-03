@@ -16,7 +16,7 @@ public class ComandoPrendiTest {
 
 	private static final String NOME_ATTREZZO_INIZIALE = "attrezzo iniziale";
 
-	private Comando comandoPrendi;
+	private AbstractComando comandoPrendi;
 	private Partita partita;
 
 

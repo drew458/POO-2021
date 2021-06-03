@@ -18,7 +18,7 @@ public class ComandoVaiTest {
 	private static final String DIREZIONE_NORD = "nord";
 	private static final String NOME_STANZA_PARTENZA = "Partenza";
 
-	private Comando comandoDaEseguire;
+	private AbstractComando comandoDaEseguire;
 	private Partita partita;
 	private Stanza stanzaIniziale;
 

@@ -4,7 +4,7 @@ import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 import it.uniroma3.diadia.giocatore.Giocatore;
 
-public class ComandoRegala {
+public class ComandoRegala extends AbstractComando {
 	
 	Giocatore giocatore;
 
@@ -12,5 +12,11 @@ public class ComandoRegala {
 		Attrezzo attrezzo = partita.getGiocatore().getBorsa().getAttrezzo(nomeAttrezzo);
 		partita.getGiocatore().getBorsa().removeAttrezzo(nomeAttrezzo);
 		partita.getStanzaCorrente().getPersonaggio().riceviRegalo(attrezzo, partita);
+	}
+
+	@Override
+	public void esegui(Partita partita) {
+		// TODO Auto-generated method stub
+		
 	}
 }
