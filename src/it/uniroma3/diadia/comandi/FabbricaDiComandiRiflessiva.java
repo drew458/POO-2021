@@ -15,13 +15,18 @@ public class FabbricaDiComandiRiflessiva implements FabbricaDiComandi {
 			nomeComando = scannerDiParole.next();	//prima parola: nome del comando
 		if (scannerDiParole.hasNext())
 			parametro = scannerDiParole.next();		//seconda parola: eventuale parametro
-		StringBuilder nomeClasse = new StringBuilder("it.uniroma3.diadia.comandi.Comando");
-		nomeClasse.append( Character.toUpperCase(nomeComando.charAt(0)) );
-		// es. nomeClasse: ‘it.uniroma3.diadia.comandi.ComandoV’
-		nomeClasse.append( nomeComando.substring(1) ) ;
-		// es. nomeClasse: ‘it.uniroma3.diadia.comandi.ComandoVai’
-		comando = (Comando)Class.forName(nomeClasse.toString()).newInstance();
-		comando.setParametro(parametro);
+		try {
+			String nomeClasse = "it.uniroma3.diadia.comandi.Comando";
+			nomeClasse += Character.toUpperCase(nomeComando.charAt(0));
+			// es. nomeClasse: ‘it.uniroma3.diadia.comandi.ComandoV’
+			nomeClasse += nomeComando.substring(1);
+			// es. nomeClasse: ‘it.uniroma3.diadia.comandi.ComandoVai’
+			comando = (Comando)Class.forName(nomeClasse).newInstance();
+			comando.setParametro(parametro);
+		} catch (Exception e) {
+			comando = new ComandoNonValido();
+			System.out.println("Comando inesistente");
+		}		
 		return comando;
 	}
 
