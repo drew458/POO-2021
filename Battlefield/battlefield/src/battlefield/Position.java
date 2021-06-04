@@ -6,7 +6,7 @@ package battlefield;
  * (vedi DOMANDA 1)
  */
 public class Position {
-	
+
 	private int x, y;
 
 	public Position(int x, int y){
@@ -21,9 +21,20 @@ public class Position {
 	public int getY() {
 		return this.y;
 	}
-		
+
 	public String toString() {
 		return this.x+"-"+this.y;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Position that = (Position) obj;
+		return this.getX() == that.getX() && this.getY() == that.getY();
+	}
+
+	@Override
+	public int hashCode() {
+		return this.getX() + this.getY()*31;
 	}
 
 }
