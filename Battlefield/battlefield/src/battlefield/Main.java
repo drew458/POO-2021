@@ -23,16 +23,10 @@ public class Main {
 		for(int i=0; i<PASSI; i++) {
 			
 			
-			final List<Chaser> allChasers = new ArrayList<>(this.field.getAllChasers());
-			Collections.shuffle(allChasers);
-			for(Chaser c : allChasers) {
-				c.passo(field);
-			}
-			
-			final List<Walker> allWalkers = new ArrayList<>(this.field.getAllWalkers());
-			Collections.shuffle(allWalkers);
-			for(Walker w : allWalkers) {
-				w.passo(field);
+			final List<Robot> allRobots = new ArrayList<>(this.field.getAllRobots());
+			Collections.shuffle(allRobots);
+			for(Robot r : allRobots) {
+				r.passo(field);
 			}
 			
 			this.display.aggiornaSchermata(i, this.field);

@@ -19,9 +19,9 @@ public class BattlefieldTest {
 
 	@Test
 	public void testAddWalker() {
-		assertEquals(0, this.field.getAllWalkers().size());
-		this.field.addWalker(new Walker(new Position(0,0)));
-		assertEquals(1, this.field.getAllWalkers().size());
+		assertEquals(0, this.field.getAllRobots().size());
+		this.field.addRobot(new Walker(new Position(0,0)));
+		assertEquals(1, this.field.getAllRobots().size());
 	}
 	
 	@Test

@@ -43,15 +43,15 @@ public class RobotOrdinatiPerLongevitaTest {
 	/* (vedi DOMANDA 6)	per l'utilizzo dei seguenti test-case */
 	@Test
 	public void testRobotOrdinatiPerLongevitaTest_equals() {
-		this.field.addWalker(new Walker(origine)); // n.b. longevità 0;
-		this.field.addWalker(new Walker(origine)); // n.b. longevità 0;
+		this.field.addRobot(new Walker(origine)); // n.b. longevità 0;
+		this.field.addRobot(new Walker(origine)); // n.b. longevità 0;
 		assertEquals(1, this.field.getRobotOrdinatiPerLongevita().size());
 	}
 
 	@Test
 	public void testRobotOrdinatiPerLongevitaTest_stessaLongevitaTipoDiverso() {
-		this.field.addWalker(new Walker(origine)); // n.b. longevità 0;
-		this.field.addWalker(new Walker(unitari)); // n.b. longevità 0;
+		this.field.addRobot(new Walker(origine)); // n.b. longevità 0;
+		this.field.addRobot(new Walker(unitari)); // n.b. longevità 0;
 		assertEquals(2, this.field.getRobotOrdinatiPerLongevita().size());
 	}
 
@@ -59,10 +59,10 @@ public class RobotOrdinatiPerLongevitaTest {
 	public void testRobotOrdinatiPerLongevitaTest_longevitaDiverse() {
 		final Walker giovane = new Walker(origine);
 		setLongevita(giovane, 0);   // n.b. longevità 0;
-		this.field.addWalker(giovane);
+		this.field.addRobot(giovane);
 		final Chaser vecchio = new Chaser(unitari);
 		setLongevita(vecchio, 100); // n.b. longevità 100;
-		this.field.addChaser(vecchio);
+		this.field.addRobot(vecchio);
 		final SortedSet<?> perLongevita = this.field.getRobotOrdinatiPerLongevita();
 		assertEquals(2, perLongevita.size());
 		assertSame(giovane, perLongevita.first());
