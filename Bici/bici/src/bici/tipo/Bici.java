@@ -1,6 +1,5 @@
 package bici.tipo;
 
-import static bici.gui.LettoreImmagini.leggiImmagineBici;
 import static bici.sim.GeneratoreCasuale.posizioneCasuale;
 
 import java.awt.Image;
@@ -15,9 +14,7 @@ import bici.sim.Zona;
  * Modella le fasi del ciclo di vista di una bicicletta {@link Bici}.
  * <B>(VEDI DOMANDA 2)</B>
  */
-public class Bici {
-	
-	static final private Image IMMAGINE_BICI_BIANCA = leggiImmagineBici(java.awt.Color.WHITE);
+public abstract class Bici {
 
 	private Zona zona;
 
@@ -77,9 +74,7 @@ public class Bici {
 		eseguiSpostamento();
 	}
 	
-	private Coordinate decidiProssimaDestinazione() {
-		return posizioneCasuale();
-	}
+	protected abstract Coordinate decidiProssimaDestinazione();
 
 	private boolean destinazioneRaggiunta() {
 		return this.getPosizione().equals(this.destinazione);
@@ -101,9 +96,7 @@ public class Bici {
 		return this.getZona().getPossibiliDirezioni(this.getPosizione());
 	}
 
-	public Image getImmagine() {
-		return IMMAGINE_BICI_BIANCA;
-	}
+	public abstract Image getImmagine();
 
 	@Override
 	public String toString() {
@@ -115,8 +108,6 @@ public class Bici {
 	 * @return un id progressivo (per tipologia) associato a
 	 *         questo oggetto
 	 */
-	public int getId() {
-		return 0;
-	}
+	public abstract int getId();
 
 }

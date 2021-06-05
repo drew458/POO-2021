@@ -12,7 +12,9 @@ import javax.swing.SwingUtilities;
 
 import bici.gui.GUI;
 import bici.stats.Statistiche;
+import bici.tipo.Bianca;
 import bici.tipo.Bici;
+import bici.tipo.Gialla;
 
 public class Simulatore {
 
@@ -38,11 +40,16 @@ public class Simulatore {
 		/* DA AGGIORNARE (VEDI DOMANDA 2) */
 		for(int i=0; i<NUMERO_BICI_PER_TIPOLOGIA; i++) {
 			this.bici.add(creaBianca());
+			this.bici.add(creaGialla());
 		}
 	}
 	
+	private Bici creaGialla() {
+		return new Gialla(this.getZona());
+	}
+
 	public Bici creaBianca() {
-		return new Bici(this.getZona());
+		return new Bianca(this.getZona());
 	}
 
 
