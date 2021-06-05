@@ -5,7 +5,7 @@ package battlefield;
  * Da sistemare. Vedi PositionTest.
  * (vedi DOMANDA 1)
  */
-public class Position {
+public class Position implements Comparable<Position> {
 
 	private int x, y;
 
@@ -35,6 +35,13 @@ public class Position {
 	@Override
 	public int hashCode() {
 		return this.getX() + this.getY()*31;
+	}
+
+	public int compareTo(Position that) {
+		int ris = this.getX() - that.getX();
+		if(ris!=0)
+			return ris;
+		return this.getY() - that.getY();
 	}
 
 }

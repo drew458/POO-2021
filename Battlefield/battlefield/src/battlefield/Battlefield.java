@@ -53,9 +53,11 @@ public class Battlefield {
 		return class2robots;
 	}
 	
-	public List<?> getRobotOrdinatiPerPosizione() {
-		// (vedi DOMANDA 4)
-		return null;
+	public List<Robot> getRobotOrdinatiPerPosizione() {
+		List<Robot> ordinati = new ArrayList<>(this.posizione2robot.values());
+		Comparator<Robot> comparatorePerPosizione = new ComparatorePerPosizione();
+		ordinati.sort(comparatorePerPosizione);
+		return ordinati;
 	}
 	
 	public SortedSet<?> getRobotOrdinatiPerLongevita() {
