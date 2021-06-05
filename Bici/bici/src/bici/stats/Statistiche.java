@@ -36,8 +36,15 @@ public class Statistiche {
 	 *         la lista dei percorsi coperti
 	 */
 	public Map<Bici, List<Percorso>> percorsiPerBici(Set<Percorso> percorsi) {
-		// DA COMPLETARE (VEDI DOMANDA 3)
-		return Collections.emptyMap();
+		Map<Bici, List<Percorso>> bici2percorsi = new HashMap<>();
+		for(Percorso percorso : percorsi) {
+			Bici bici = percorso.getBici();
+			if(!bici2percorsi.containsKey(bici)) {
+				bici2percorsi.put(bici, new LinkedList<Percorso>());
+			}
+			bici2percorsi.get(bici).add(percorso);
+		}
+		return bici2percorsi;
 	}
 
 	/**
