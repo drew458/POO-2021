@@ -25,8 +25,21 @@ public class BattlefieldTest {
 	}
 	
 	@Test
+	public void testRaggruppaRobotFieldVuoto() {
+		assertTrue(this.field.raggruppaRobotPerTipo().isEmpty());
+	}
+	
+	@Test
+	public void testRaggruppaRobotUnWalker() {
+		this.field.addRobot(new Walker(new Position(0,0)));
+		assertEquals(1, this.field.raggruppaRobotPerTipo().size());
+	}
+	
+	@Test
 	public void testRaggruppaRobotDiDueTipiDiversi() {
-		fail("vedi DOMANDA 3");
+		this.field.addRobot(new Walker(new Position(0,0)));
+		this.field.addRobot(new Chaser(new Position(1,0)));
+		assertEquals(2, this.field.raggruppaRobotPerTipo().size());
 	}
 
 }

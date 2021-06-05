@@ -35,9 +35,22 @@ public class Battlefield {
 	}
 
 	@SuppressWarnings("rawtypes")
-	public Map<Class, Set<?>> raggruppaRobotPerTipo() {
-		// (vedi DOMANDA 3)
-		return null;
+	public Map<Class, Set<Robot>> raggruppaRobotPerTipo() {
+		Collection<Robot> tuttiRobot = this.posizione2robot.values();
+		Map<Class, Set<Robot>> class2robots = new HashMap<>();
+		Set<Robot> appoggio;
+		for(Robot r : tuttiRobot) {
+			if(class2robots.containsKey(r.getClass())) {
+				appoggio = class2robots.get(r.getClass());
+				appoggio.add(r);
+			}
+			else {
+				appoggio = new HashSet<Robot>();
+				appoggio.add(r);
+				class2robots.put(r.getClass(), appoggio);
+			}
+		}
+		return class2robots;
 	}
 	
 	public List<?> getRobotOrdinatiPerPosizione() {
