@@ -12,10 +12,10 @@ import bici.sim.Percorso;
 import bici.sim.Zona;
 
 /**
- * Modella le fasi del ciclo di vista di una bicicletta {@link Bianca}.
+ * Modella le fasi del ciclo di vista di una bicicletta {@link Bici}.
  * <B>(VEDI DOMANDA 2)</B>
  */
-public class Bianca {
+public class Bici {
 	
 	static final private Image IMMAGINE_BICI_BIANCA = leggiImmagineBici(java.awt.Color.WHITE);
 
@@ -29,7 +29,7 @@ public class Bianca {
 	
 	private Coordinate destinazione;
 
-	public Bianca(Zona zona) {		
+	public Bici(Zona zona) {		
 		this.zona = zona;
 		final Coordinate posizioneIniziale = posizioneCasuale();
 		this.posizione = posizioneIniziale;

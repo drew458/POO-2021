@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import bici.sim.Zona;
-import bici.tipo.Bianca;
+import bici.tipo.Bici;
 
 /** 
  * Controllare che questi test abbiano successo sia
@@ -28,8 +28,8 @@ public class BiciTest {
 	@Test
 	public void testIdProgressiviPerBianche() {
 		// DA RIVEDERE VEDI DOMANDA 2
-		assertEquals("Gli id sono progressivi base 0 per ciascun tipo dinamico!", 0, new Bianca(this.zona).getId());
-		assertEquals("Gli id sono progressivi base 0 per ciascun tipo dinamico!", 1, new Bianca(this.zona).getId());
+		assertEquals("Gli id sono progressivi base 0 per ciascun tipo dinamico!", 0, new Bici(this.zona).getId());
+		assertEquals("Gli id sono progressivi base 0 per ciascun tipo dinamico!", 1, new Bici(this.zona).getId());
 	}
 
 	@Test

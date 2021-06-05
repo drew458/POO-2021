@@ -5,7 +5,7 @@ import java.util.*;
 import bici.sim.Coordinate;
 import bici.sim.Percorso;
 import bici.sim.Zona;
-import bici.tipo.Bianca;
+import bici.tipo.Bici;
 
 public class Statistiche {
 
@@ -18,7 +18,7 @@ public class Statistiche {
 
 		// (VEDI DOMANDA 3)
 		System.out.println("Percorsi di ciascuna bicicletta:");
-		final Map<Bianca,List<Percorso>> bici2percorsi = percorsiPerBici(percorsi);
+		final Map<Bici,List<Percorso>> bici2percorsi = percorsiPerBici(percorsi);
 		stampaPercorsiPerBici(bici2percorsi);
 		System.out.println();
 
@@ -35,7 +35,7 @@ public class Statistiche {
 	 * @return una mappa che riporti per ogni bici (di qualsiasi tipo)
 	 *         la lista dei percorsi coperti
 	 */
-	public Map<Bianca, List<Percorso>> percorsiPerBici(Set<Percorso> percorsi) {
+	public Map<Bici, List<Percorso>> percorsiPerBici(Set<Percorso> percorsi) {
 		// DA COMPLETARE (VEDI DOMANDA 3)
 		return Collections.emptyMap();
 	}
@@ -44,8 +44,8 @@ public class Statistiche {
 	 * <EM>N.B. UTILE PER STAMPARE RISULTATI DOMANDA 3</EM>
 	 * @param bici2percorsi
 	 */
-	private void stampaPercorsiPerBici(final Map<Bianca, List<Percorso>> bici2percorsi) {
-		for(Bianca bici : bici2percorsi.keySet()) {
+	private void stampaPercorsiPerBici(final Map<Bici, List<Percorso>> bici2percorsi) {
+		for(Bici bici : bici2percorsi.keySet()) {
 			List<Percorso> percorsi = bici2percorsi.get(bici);
 			System.out.println("La bicicletta "+bici+" ha coperto "+( percorsi!=null ? percorsi.size() : 0 ) +" corse");
 		}
@@ -59,7 +59,7 @@ public class Statistiche {
 	 *         le posizioni piu' battute come origine o destinazione di un 
 	 *         percorso, come valori il numero di tali percorsi
 	 */
-	public SortedMap<Coordinate,Integer> utilizzi(Map<Bianca, List<Percorso>> bici2percorsi) {
+	public SortedMap<Coordinate,Integer> utilizzi(Map<Bici, List<Percorso>> bici2percorsi) {
 		// DA COMPLETARE (VEDI DOMANDA 4)
 		return Collections.emptySortedMap();
 	}

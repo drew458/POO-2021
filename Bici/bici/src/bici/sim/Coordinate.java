@@ -37,5 +37,16 @@ public class Coordinate {
 	public String toString() {
 		return "("+getX()+","+getY()+")";
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		Coordinate that = (Coordinate) o;
+		return ( this.getX() == that.getX() && this.getY() == that.getY() ); 
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.getX() + this.getY()*31;
+	}
 
 }
