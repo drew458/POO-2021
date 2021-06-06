@@ -89,6 +89,18 @@ public class Direzione {
 	public Direzione opposta() {
 		return new Direzione(-this.getDx(), -this.getDy());
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj==null || obj.getClass()!=this.getClass()) return false;
+		final Direzione that = (Direzione) obj;
+		return this.getDx() == that.getDx() && this.getDy() == that.getDy();
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.getDx()+this.getDy();
+	}
 
 	@Override
 	public String toString() {

@@ -32,6 +32,18 @@ public class Coordinate {
 	public Coordinate trasla(Direzione dir) {
 		return new Coordinate(getX()+dir.getDx(), getY()+dir.getDy());
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj==null || obj.getClass()!=this.getClass()) return false;
+		final Coordinate that = (Coordinate) obj;
+		return this.getX() == that.getX() && this.getY() == that.getY();
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.getX() + this.getY();
+	}
 
 	@Override
 	public String toString() {
