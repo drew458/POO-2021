@@ -3,14 +3,14 @@ package ant.gui;
 import static ant.costanti.CostantiGUI.COLORE_BORDO;
 import static ant.costanti.CostantiGUI.DIM_CELLE;
 import static ant.costanti.CostantiGUI.DIM_FERORMONE;
-import static ant.costanti.CostantiGUI.IMMAGINE_SEME;
-import static ant.costanti.CostantiGUI.IMMAGINE_MATTONE;
 import static ant.costanti.CostantiGUI.IMMAGINE_FORMICAIO;
+import static ant.costanti.CostantiGUI.IMMAGINE_MATTONE;
+import static ant.costanti.CostantiGUI.IMMAGINE_SEME;
 import static ant.costanti.CostantiSimulazione.DIMENSIONE;
 import static java.awt.Color.BLACK;
 import static java.awt.Color.YELLOW;
 import static java.awt.event.KeyEvent.VK_ESCAPE;
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -26,8 +26,7 @@ import ant.Ambiente;
 import ant.Cibo;
 import ant.Coordinate;
 import ant.Formicaio;
-import ant.formica.Esploratrice;
-import ant.formica.Inseguitrice;
+import ant.formica.Formica;
 import ant.simulatore.Simulatore;
 import ant.simulatore.Statistiche;
 
@@ -78,10 +77,7 @@ public class GUI extends JPanel {
 		g.setColor(YELLOW);
 
 		/* DA CAMBIARE (VEDI DOMANDA 2) */
-		for (Esploratrice formica : this.simulatore.getFormicheEsploratici()) {
-			disegnaFormica(g, formica);
-		}
-		for (Inseguitrice formica : this.simulatore.getFormicheInseguitrici()) {
+		for (Formica formica : this.simulatore.getFormiche()) {
 			disegnaFormica(g, formica);
 		}
 
@@ -107,18 +103,7 @@ public class GUI extends JPanel {
 		g.setColor(BLACK);
 	}
 
-	private void disegnaFormica(Graphics g, Esploratrice formica) {
-        /* DA CAMBIARE ( VEDI DOMANDA 2 )*/        
-        final Coordinate pos = formica.getPosizione();		
-		final Image immagine = formica.getImmagine();
-		final String ids = formica.toString();
-		disegnaTesto(g, pos, ids);
-		if (formica.ciboCaricato())
-			disegnaCibo(g, pos);
-		disegnaImmagine(g, immagine, pos);
-	}
-
-	private void disegnaFormica(Graphics g, Inseguitrice formica) {
+	private void disegnaFormica(Graphics g, Formica formica) {
         /* DA CAMBIARE ( VEDI DOMANDA 2 )*/        
         final Coordinate pos = formica.getPosizione();		
 		final Image immagine = formica.getImmagine();

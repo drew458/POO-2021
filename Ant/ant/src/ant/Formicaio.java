@@ -3,8 +3,7 @@ package ant;
 import java.util.HashSet;
 import java.util.Set;
 
-import ant.formica.Esploratrice;
-import ant.formica.Inseguitrice;
+import ant.formica.Formica;
 
 public class Formicaio {
 
@@ -21,13 +20,7 @@ public class Formicaio {
 		return this.posizione;
 	}
 	
-	public void immagazzinaCaricoDi(Esploratrice formica) {
-		final Cibo carico = formica.scaricaCibo();
-		if (carico!=null)
-			this.magazzino.add(carico);
-	}
-
-	public void immagazzinaCaricoDi(Inseguitrice formica) {
+	public void immagazzinaCaricoDi(Formica formica) {
 		final Cibo carico = formica.scaricaCibo();
 		if (carico!=null)
 			this.magazzino.add(carico);
