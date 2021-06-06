@@ -1,7 +1,9 @@
 package ant.simulatore;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,6 +13,7 @@ import org.junit.Test;
 import ant.Cibo;
 import ant.Coordinate;
 import ant.formica.Esploratrice;
+import ant.formica.Formica;
 import ant.formica.Inseguitrice;
 
 @SuppressWarnings("unused")
@@ -52,8 +55,23 @@ public class StatisticheTest {
 	}
 	
 	@Test
+	public void testRaccoltoPerFormica_raccoltoVuoto() {
+		assertEquals(Collections.emptyMap(), this.stats.raccoltoPerFormica(Collections.emptySet()));
+	}
+	
+	@Test
 	public void testRaccoltoPerTipoDiFormica() {
-		// DA COMPLETARE ( VEDI DOMANDA 4 ) SUGG.: USARE I METODI FACTORY SOPRA
+		final Set<Cibo> ciboRaccolto = new HashSet<>();
+		final Cibo ciboRaccoltoDaEsploratore = creaCiboRaccoltoDaEsploratore();
+		Formica esploratrice = ciboRaccoltoDaEsploratore.getRaccoglitrice();
+		ciboRaccolto.add(ciboRaccoltoDaEsploratore);
+		final Cibo ciboRaccoltoDaInseguitore = creaCiboRaccoltoDaInseguitore();
+		Formica inseguitore = ciboRaccoltoDaInseguitore.getRaccoglitrice();
+		ciboRaccolto.add(ciboRaccoltoDaInseguitore);
+		assertNotNull(this.stats.raccoltoPerFormica(ciboRaccolto));
+		assertEquals(2, this.stats.raccoltoPerFormica(ciboRaccolto).size());
+		assertEquals(new Integer(1), this.stats.raccoltoPerFormica(ciboRaccolto).get(esploratrice));
+		assertEquals(new Integer(1), this.stats.raccoltoPerFormica(ciboRaccolto).get(inseguitore));
 	}
 	
 }

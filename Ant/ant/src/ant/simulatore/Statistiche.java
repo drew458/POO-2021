@@ -1,11 +1,15 @@
 package ant.simulatore;
 
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import ant.Ambiente;
 import ant.Cibo;
 import ant.Formicaio;
+import ant.formica.Formica;
 
 public class Statistiche {
 
@@ -18,7 +22,7 @@ public class Statistiche {
 
 		// (VEDI DOMANDA 3)
 		System.out.println("Quantita' raccolta da ciascuna formica:");
-		final Map<Object,Integer> formica2quantita = raccoltoPerFormica(raccolto);
+		final Map<Formica, Integer> formica2quantita = raccoltoPerFormica(raccolto);
 		stampaRaccoltoPerFormica(formica2quantita);
 		System.out.println();
 
@@ -41,10 +45,20 @@ public class Statistiche {
 	 * @param raccolto - insieme di unita' di cibo raccolte
 	 * @return una mappa che conti per ogni formica quante unita' di cibo ha raccolto
 	 */
-	public Map<Object, Integer> raccoltoPerFormica(Set<Cibo> raccolto) {
+	public Map<Formica, Integer> raccoltoPerFormica(Set<Cibo> raccolto) {
 		// DA COMPLETARE (VEDI DOMANDA 3)
-		// N.B. il tipo restituito e' migliorabile dopo aver svolto la domanda 2
-		return Collections.emptyMap();
+		final Map<Formica, Integer> formica2raccolto = new HashMap<>();
+		for (Cibo cibo : raccolto) {
+			final Formica raccoglitrice = cibo.getRaccoglitrice();
+			if(formica2raccolto.containsKey(raccoglitrice)) {
+				int raccoltoSinora = formica2raccolto.get(raccoglitrice);
+				formica2raccolto.put(raccoglitrice, raccoltoSinora+1);
+			}
+			else {
+				formica2raccolto.put(raccoglitrice, 1);
+			}
+		}
+		return formica2raccolto;
 	}
 
 
@@ -52,7 +66,7 @@ public class Statistiche {
 	 *  <EM>N.B. UTILE PER STAMPARE RISULTATI DOMANDA 3</EM>
 	 * @param formica2quantita
 	 */
-	private void stampaRaccoltoPerFormica(final Map<Object, Integer> formica2quantita) {
+	private void stampaRaccoltoPerFormica(final Map<Formica, Integer> formica2quantita) {
 		// N.B. il tipo del parametro e' migliorabile dopo aver svolto la domanda 2
 		for(Object formica : formica2quantita.keySet()) {
 			Integer quantita = formica2quantita.get(formica);
