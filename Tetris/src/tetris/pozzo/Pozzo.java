@@ -19,14 +19,14 @@ import tetris.tetramino.Tetramino;
  * <BR/>
  * Contiene un insieme di oggetti {@link Cella} che derivano dagli oggetti
  * {@link Tetramino} una volta che questi raggiunge il fondo del pozzo e
- * collide con una {@link Cella} gi√† presente. 
+ * collide con una {@link Cella} gi‡† presente. 
  * <BR/>
  * Le righe completate sono rimosse invocando il metodo 
  * {@link #aggiungiCelleErimuoviRigheCompletate(Set)}
  * <BR>
  * Le celle possiedono coordinate basate in (0,0) con ascissa crescente 
  * verso dx, ed ordinata crescente verso il basso, secondo lo schema che
- * segue (<i>h</i> √® l'altezza del pozzo ed  <i>l</i> la sua larghezza)
+ * segue (<i>h</i> Ë l'altezza del pozzo ed  <i>l</i> la sua larghezza)
  * <PRE>
  *          (0,0) *   ---->   * (<i>l</i>,0)
  *          (0,1) *     x     * (<i>l</i>,1)
@@ -147,10 +147,10 @@ public class Pozzo {
 		final NavigableSet<Integer> righeCoinvolte = getInsiemeOrdinateY(celle);
 		int contatoreRimosse = 0;
 		while (!righeCoinvolte.isEmpty()) {
-			int rigaPi√πInBasso = righeCoinvolte.pollLast() + contatoreRimosse; // y alta <-> riga bassa
+			int rigaPi˘InBasso = righeCoinvolte.pollLast() + contatoreRimosse; // y alta <-> riga bassa
 
-			if (isCompleta(rigaPi√πInBasso)) {
-				rimuoviRigaScendendoCelleSopra(rigaPi√πInBasso);
+			if (isCompleta(rigaPi˘InBasso)) {
+				rimuoviRigaScendendoCelleSopra(rigaPi˘InBasso);
 				contatoreRimosse++;
 			}
 		}
@@ -162,7 +162,7 @@ public class Pozzo {
 	 * 
 	 * @param inputCelle - un insieme di celle
 	 * @return l'insieme ({@link NavigableSet}) delle ordinate (y)
-	 *         delle posizioni delle celle passate. L'insieme √®
+	 *         delle posizioni delle celle passate. L'insieme Ë
 	 *         ordinato crescente.
 	 * @see {@link Posizione},  {@link Cella}
 	 */
@@ -176,7 +176,7 @@ public class Pozzo {
 
 	/**
 	 * @param y ordinata della riga controllata
-	 * @return true se e solo se la riga √® attualmente completa
+	 * @return true se e solo se la riga Ë attualmente completa
 	 */
 	public boolean isCompleta(int y) {
 		return y == this.a - 1 || ( getCelleDellaRigaSenzaBordo(y).size() == this.l-2 ); // "-2" esclude il bordo
@@ -202,7 +202,7 @@ public class Pozzo {
 	 */
 	public Set<Cella> getCelleDellaRigaSenzaBordo(int riga) {
 		/* DA COMPLETARE (senza iterazioni - esercizio 3) */
-		if(riga == this.a -1) return new TreeSet<>();
+		if(riga == this.a -1) return new TreeSet<>();	//l'invocazione del metodo sull'ultima riga (il bordo) deve ritornare insieme vuoto
 		return new TreeSet<>(
 				this.celle.subSet(new Cella(0,riga,Costanti.COLORE_BORDO), false,
 						new Cella(this.l-1,riga, COLORE_BORDO), false)
@@ -215,7 +215,7 @@ public class Pozzo {
 	 * @return il  @link {@link NavigableSet} di tutte le celle attualmente nel
 	 *         pozzo e sopra la riga passata come riferimento; le celle sono 
 	 *         ordinate per Y decrescente delle rispettive posizioni, ed a
-	 *         parit√† di Y, per X.
+	 *         parit‡† di Y, per X.
 	 *         N.B. il risultato non include le celle del bordo! */
 
 	public NavigableSet<Cella> getCelleSopraRigaYdecrescente(int riga) {

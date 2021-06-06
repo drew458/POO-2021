@@ -45,7 +45,7 @@ public class Cella implements Comparable<Cella> {
 	
 	@Override
 	public int hashCode() {
-		return this.posizione.hashCode() * this.colore.hashCode();
+		return 31 + this.posizione.hashCode() * this.colore.hashCode();
 	}
 	
 	@Override
