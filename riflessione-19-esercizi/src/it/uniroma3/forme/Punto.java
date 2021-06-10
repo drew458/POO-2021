@@ -1,0 +1,38 @@
+package it.uniroma3.forme;
+
+public class Punto {
+
+	private int x,y;
+	
+	public Punto(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
+	}
+	
+	public void trasla(int deltaX, int deltaY) {
+		this.x += deltaX;
+		this.y += deltaY;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		Punto that = (Punto) obj;
+		return this.getX() == that.getX() && this.getY() == that.getY();
+	}
+}
