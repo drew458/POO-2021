@@ -35,4 +35,20 @@ public class Punto extends AbstractForma {
 		Punto that = (Punto) obj;
 		return this.getX() == that.getX() && this.getY() == that.getY();
 	}
+	
+	@Override
+	public int hashCode() {
+		return this.getX() + this.getY() *31;
+	}
+	
+	@Override
+	public boolean isDegenere() {
+		return true;
+	}
+
+	@Override
+	public Punto getPuntoDegenere() {
+		if(!this.isDegenere()) return null;
+		return this;
+	}
 }

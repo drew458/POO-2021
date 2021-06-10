@@ -36,4 +36,15 @@ public class Cerchio extends AbstractForma {
 		Cerchio that = (Cerchio) obj;
 		return this.raggio == that.getRaggio() && this.getCentro().equals(that.getCentro());
 	}
+	
+	@Override
+	public boolean isDegenere() {
+		return this.getRaggio() == 0;
+	}
+
+	@Override
+	public Punto getPuntoDegenere() {
+		if(!this.isDegenere()) return null;
+		return this.getCentro();
+	}
 }

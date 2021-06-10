@@ -42,9 +42,24 @@ public class Rettangolo extends AbstractForma {
 	
 	@Override
 	public boolean equals(Object obj) {
+		if(super.equals(obj))
+			return true;
+		
+		
 		Rettangolo that = (Rettangolo) obj;
 		return this.getBase() == that.getBase() 
 				&& this.getAltezza() == that.getAltezza()
 				&& this.getVertice() == that.getVertice();
+	}
+	
+	@Override
+	public boolean isDegenere() {
+		return this.getBase() == 0 && this.getAltezza() == 0;
+	}
+
+	@Override
+	public Punto getPuntoDegenere() {
+		if(!this.isDegenere()) return null;
+		return this.getVertice();
 	}
 }
