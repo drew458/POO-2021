@@ -1,6 +1,6 @@
 package it.uniroma3.forme;
 
-public class Rettangolo implements Forma {
+public class Rettangolo extends AbstractForma {
 
 	private int altezza, base;
 	private Punto vertice;

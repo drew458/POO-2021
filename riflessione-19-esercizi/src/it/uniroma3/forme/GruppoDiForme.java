@@ -3,7 +3,7 @@ package it.uniroma3.forme;
 import java.util.LinkedList;
 import java.util.List;
 
-public class GruppoDiForme implements Forma {
+public class GruppoDiForme extends AbstractForma {
 
 	private List<Forma> gruppoDiForme;
 	

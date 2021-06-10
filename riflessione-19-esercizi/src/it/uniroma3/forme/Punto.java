@@ -1,6 +1,6 @@
 package it.uniroma3.forme;
 
-public class Punto {
+public class Punto extends AbstractForma {
 
 	private int x,y;
 	

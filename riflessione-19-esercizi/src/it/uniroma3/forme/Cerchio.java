@@ -1,6 +1,6 @@
 package it.uniroma3.forme;
 
-public class Cerchio implements Forma {
+public class Cerchio extends AbstractForma {
 
 	private int raggio;
 	private Punto centro;
