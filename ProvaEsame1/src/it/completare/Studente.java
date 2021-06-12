@@ -1,4 +1,4 @@
-package it.classi;
+package it.completare;
 
 public class Studente {
 	//NON toccare il codice di questa classe
