@@ -2,7 +2,7 @@ package car.stats;
 
 import java.util.*;
 
-import car.auto.Bianca;
+import car.auto.Auto;
 import car.sim.Coordinate;
 import car.sim.Tragitto;
 import car.sim.Zona;
@@ -18,7 +18,7 @@ public class Statistiche {
 
 		// (VEDI DOMANDA 3)
 		System.out.println("Percorsi di ciascuna vettura:");
-		final Map<Bianca,Set<Tragitto>> auto2tragitti = tragittoPerAuto(tragitti);
+		final Map<Auto,Set<Tragitto>> auto2tragitti = tragittoPerAuto(tragitti);
 		stampaTragittiPerAuto(auto2tragitti);
 		System.out.println();
 
@@ -35,7 +35,7 @@ public class Statistiche {
 	 * @return una mappa che riporti per ogni auto (di qls tipo)
 	 *         l'insieme dei tragitti che ha percorso
 	 */
-	public Map<Bianca, Set<Tragitto>> tragittoPerAuto(List<Tragitto> tragitti) {
+	public Map<Auto, Set<Tragitto>> tragittoPerAuto(List<Tragitto> tragitti) {
 		// DA COMPLETARE (VEDI DOMANDA 3)
 		return Collections.emptyMap();
 	}
@@ -44,8 +44,8 @@ public class Statistiche {
 	 * <EM>N.B. UTILE PER STAMPARE RISULTATI DOMANDA 3</EM>
 	 * @param auto2tragitti
 	 */
-	private void stampaTragittiPerAuto(final Map<Bianca, Set<Tragitto>> auto2tragitti) {
-		for(Bianca auto : auto2tragitti.keySet()) {
+	private void stampaTragittiPerAuto(final Map<Auto, Set<Tragitto>> auto2tragitti) {
+		for(Auto auto : auto2tragitti.keySet()) {
 			Set<Tragitto> tragitti = auto2tragitti.get(auto);
 			System.out.println("L'auto "+auto+" ha fatto "+( tragitti!=null ? tragitti.size() : 0 ) +" corse");
 		}

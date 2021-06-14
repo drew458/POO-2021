@@ -8,8 +8,6 @@ import java.util.Set;
 
 import org.junit.Test;
 
-import car.sim.Coordinate;
-
 /** 
  * Modificare la classe {@link Coordinate} affinche'
  * questi test abbiano successo 
