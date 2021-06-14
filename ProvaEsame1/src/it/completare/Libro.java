@@ -1,23 +1,20 @@
 package it.completare;
 
-public class Libro implements Comparable<Libro> {
-	public int anno;
-	public String titolo;
+public class Libro {
+	private String titolo;
 
-	public Libro(String titolo, int anno) {
-		this.anno = anno;
-		this.titolo = titolo;
-	}
+    private String autore;
 
-	public int compareTo(Libro o) {
-		return this.titolo.compareTo(o.getTitolo());
-	}
+    public Libro(String titolo, String autore) {
+        this.titolo = titolo;
+        this.autore = autore;
+    }
 
-	public int getAnno(){
-		return this.anno;
-	}
+    public String getAutore() {
+        return this.autore;
+    }
 
-	public String getTitolo(){
-		return this.titolo;
-	}
+    public String getTitolo() {
+        return this.titolo;
+    }
 }

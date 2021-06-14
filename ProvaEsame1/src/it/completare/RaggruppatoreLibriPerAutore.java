@@ -21,16 +21,16 @@ public class RaggruppatoreLibriPerAutore {
 	}
 
 	public Map<String, List<Libro>> autore2libri() {
-		List <Libro> libri;
 		Map<String, List<Libro>> autore2libri = new HashMap<String, List<Libro>>();
 		for(Libro l:elencoLibri){
-			String autore=l.getAutore();
-			libri=autore2libri.get(autore);
-			if(libri==null){
-				libri=new ArrayList <>();
-				autore2libri.put(autore,libri);
+			if(!autore2libri.keySet().contains(l.getAutore())) {
+				List<Libro> t = new ArrayList<>();
+				t.add(l);
+				autore2libri.put(l.getAutore(), t);
 			}
-			libri.add(l);
+			else {
+				autore2libri.get(l.getAutore()).add(l);
+			}
 		}
 		return autore2libri;
 	}
