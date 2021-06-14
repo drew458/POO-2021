@@ -1,5 +1,11 @@
 package it.completare;
 
+/*
+ * Cambiare la classe Studente completando il metodo compareTo(), e la classe Immatricolazioni 
+ * completando il metodo elencoOrdinatoPerEtaMatricola() 
+ * affinche' quest'ultimo restituisca l'elenco degli studenti ordinato per eta' 
+ * ed in subordine, a parita' di eta', per matricola.
+ */
 class Studente implements Comparable<Studente> {
 	private String matricola;
 	private int eta;
@@ -18,7 +24,7 @@ class Studente implements Comparable<Studente> {
 	}
 
 	public int compareTo(Studente that) {
-		// scrivere il codice di questo metodo
-		return 0;
+		if(this.getEta() == that.getEta()) return this.getMatricola().compareTo(that.getMatricola());
+		return this.getEta() - that.getEta();
 	}
 }

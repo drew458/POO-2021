@@ -22,7 +22,15 @@ public class RaggruppatoreCanzoniPerAutore {
 
     public Map<String, List<Canzone>> autore2canzoni() {
         Map<String, List<Canzone>> autore2canzoni = new HashMap<String, List<Canzone>>();
-        // completare questo metodo
+        for (Canzone canzone : elencoCanzoni) {
+        	if(!autore2canzoni.keySet().contains(canzone.getAutore())){
+        		List<Canzone> l = new ArrayList<>();
+        		l.add(canzone);
+        		autore2canzoni.put(canzone.getAutore(), l);
+        	}
+        	else
+        		autore2canzoni.get(canzone.getAutore()).add(canzone);
+        }
 
         return autore2canzoni;
     }

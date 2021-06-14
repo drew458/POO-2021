@@ -8,7 +8,6 @@ import java.util.List;
  * il metodo elencoOrdinatoPerEtaMatricola() di Immatricolazioni affinche'
  * quest'ultimo restituisca l'elenco degli studenti ordinato per eta' ed in subordine, a parita' di eta', per matricola 
  */
-
 public class Immatricolazioni {
 	private List<Studente> elenco;
 
@@ -25,5 +24,15 @@ public class Immatricolazioni {
 		Collections.sort(elenco,new ComparatoreStudentePerEtaMatricola());
 		elencoOrdinato.addAll(elenco);
 		return elencoOrdinato;
-	}
+		
+		/* OPPURE */
+		
+		/* 
+		 * public List<Studente> elencoOrdinatoPerEtaMatricola() {
+			List<Studente> elencoOrdinato = new ArrayList<Studente>();
+			elencoOrdinato = this.elenco;
+			elencoOrdinato.sort(new ComparatoreStudentePerEtaMatricola());
+			return elencoOrdinato;
+		} */
+	} 
 }

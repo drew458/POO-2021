@@ -22,7 +22,7 @@ public class RaggruppatoreLibriPerAutore {
 
 	public Map<String, List<Libro>> autore2libri() {
 		Map<String, List<Libro>> autore2libri = new HashMap<String, List<Libro>>();
-		for(Libro l:elencoLibri){
+		for(Libro l : elencoLibri){
 			if(!autore2libri.keySet().contains(l.getAutore())) {
 				List<Libro> t = new ArrayList<>();
 				t.add(l);

@@ -1,5 +1,10 @@
 package it.completare;
 
+/**
+ * Scrivere il metodo autore2libri() della classe RaggruppatoreLibriPerAutore che restituisce una mappa
+ * le cui chiavi sono i nomi di autori di libri; 
+ * la mappa associa ad ogni nome un valore che risulta essere la lista di tutti gli oggetti Libro scritti da tale autore
+ */
 public class Libro {
 	private String titolo;
 

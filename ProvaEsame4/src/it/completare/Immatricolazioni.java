@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Cambiare la classe Studente completando il metodo compareTo(), e la classe Immatricolazioni completando il 
- * metodo elencoOrdinatoPerEtaMatricola() affinche' quest'ultimo restituisca l'elenco degli studenti 
- * ordinato per eta' ed in subordine, a parita' di eta', per matricola.
+/*
+ * Cambiare la classe Studente completando il metodo compareTo(), e la classe Immatricolazioni 
+ * completando il metodo elencoOrdinatoPerEtaMatricola() affinche' quest'ultimo 
+ * restituisca l'elenco degli studenti ordinato per eta' ed in subordine, a parita' di eta', per matricola.
  */
 public class Immatricolazioni {
 	private List<Studente> elenco;
@@ -21,9 +21,9 @@ public class Immatricolazioni {
     }
 
     public List<Studente> elencoOrdinatoPerEtaMatricola() {
-    	List<Studente> elencoOrdinato = new ArrayList<Studente>();
-        Collections.sort(elenco);
+        List<Studente> elencoOrdinato = new ArrayList<Studente>();
         elencoOrdinato.addAll(elenco);
+        Collections.sort(elencoOrdinato);
         return elencoOrdinato;
     }
 }
