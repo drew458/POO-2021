@@ -36,8 +36,18 @@ public class Statistiche {
 	 *         l'insieme dei tragitti che ha percorso
 	 */
 	public Map<Auto, Set<Tragitto>> tragittoPerAuto(List<Tragitto> tragitti) {
-		// DA COMPLETARE (VEDI DOMANDA 3)
-		return Collections.emptyMap();
+		Map<Auto, Set<Tragitto>> auto2tragitti = new HashMap<>();
+		
+		for(Tragitto t : tragitti) {
+			if(auto2tragitti.containsKey(t.getAuto())) {
+				auto2tragitti.get(t.getAuto()).add(t);
+			}
+			else {
+				auto2tragitti.put(t.getAuto(), new HashSet<Tragitto>());
+				auto2tragitti.get(t.getAuto()).add(t);
+			}
+		}
+		return auto2tragitti;
 	}
 
 	/**

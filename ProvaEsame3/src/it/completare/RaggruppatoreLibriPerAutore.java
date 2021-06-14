@@ -2,7 +2,6 @@ package it.completare;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -24,11 +23,11 @@ public class RaggruppatoreLibriPerAutore {
 
     public Map<String, List<Libro>> autore2libri() {
     	Map<String, List<Libro>> autore2libri = new HashMap<String, List<Libro>>();
-		for(Libro l : elencoLibri){
-			if(!autore2libri.keySet().contains(l.getAutore())) {
-				List<Libro> t = new ArrayList<>();
-				t.add(l);
-				autore2libri.put(l.getAutore(), t);
+		
+    	for(Libro l : elencoLibri){
+			if(!autore2libri.containsKey(l.getAutore())) {
+				autore2libri.put(l.getAutore(), new ArrayList<Libro>());
+				autore2libri.get(l.getAutore()).add(l);
 			}
 			else {
 				autore2libri.get(l.getAutore()).add(l);
