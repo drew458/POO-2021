@@ -1,4 +1,4 @@
-package dist;
+package dist.main;
 
 import dist.gui.GUI;
 import dist.sim.Simulatore;
