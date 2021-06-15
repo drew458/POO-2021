@@ -69,8 +69,19 @@ public class Statistiche {
 	 *         tragitto, come valori il numero di tali tragitti
 	 */
 	public SortedMap<Coordinate,Integer> utilizzi(List<Tragitto> tragitti) {
-		// DA COMPLETARE (VEDI DOMANDA 4)
-		return Collections.emptySortedMap();
+		Map<Coordinate, Integer>  posizione2tragitti = new HashMap<>();
+		Integer numeroTragitti;
+		
+		for(Tragitto t : tragitti) {
+			if(posizione2tragitti.containsKey(t.getOrigine())) {
+				numeroTragitti = posizione2tragitti.get(t);
+				posizione2tragitti.put(t.getOrigine(), numeroTragitti++);
+			}
+			if(posizione2tragitti.containsKey(t.getDestinazione())){
+				numeroTragitti = posizione2tragitti.get(t);
+				posizione2tragitti.put(t.getDestinazione(), numeroTragitti++);
+			}
+		}
 	}
 	
 	/**

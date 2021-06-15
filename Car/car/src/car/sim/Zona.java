@@ -61,7 +61,7 @@ public class Zona {
 	/**
 	 * Restituisce l'insieme degli oggetti {@link Direzione} che possono
 	 * essere seguite a partire dalla posizione passata come riferimento,
-	 * oppure l'insieme vuoto se nessuna direzione e' possibile.<BR/>
+	 * oppure l'insieme vuoto se nessuna direzione e' possibile.
 	 * <B> VEDI DOMANDA 5 </B>
 	 * @param riferimento - la posizione di partenza
 	 * @return l'insieme delle direzioni lecite (senza colpire ostacoli)
