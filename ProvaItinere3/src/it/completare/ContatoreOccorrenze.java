@@ -1,5 +1,6 @@
 package it.completare;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -12,6 +13,18 @@ import java.util.Map;
  */
 public class ContatoreOccorrenze {
 	public static <T> Map<T, Integer> conta(List<T> ll) {
-		return null;
+		Map<T, Integer> elementi2occorrenze = new HashMap<>();
+		Integer contatore;
+		
+		for(T elemento : ll) {
+			if(elementi2occorrenze.containsKey(elemento)) {
+				contatore = elementi2occorrenze.get(elemento);
+				elementi2occorrenze.put(elemento, contatore++);
+			}
+			else {
+				elementi2occorrenze.put(elemento, 1);
+			}
+		}
+		return elementi2occorrenze;
 	}
 }
