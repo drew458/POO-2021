@@ -18,7 +18,8 @@ public class Studente {
 	
 	@Override
 	public boolean equals(Object o) {
-		return false;
+		Studente that = (Studente) o;
+		return ( this.getNome().equals(that.getNome()) && this.getMatricola() == that.getMatricola() );
 	}
 
 	public String getNome() {
