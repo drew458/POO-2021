@@ -21,7 +21,8 @@ public class Position implements Comparable<Position> {
 	public int getY() {
 		return this.y;
 	}
-
+	
+	@Override
 	public String toString() {
 		return this.x+"-"+this.y;
 	}
@@ -36,7 +37,8 @@ public class Position implements Comparable<Position> {
 	public int hashCode() {
 		return this.getX() + this.getY()*31;
 	}
-
+	
+	@Override
 	public int compareTo(Position that) {
 		int ris = this.getX() - that.getX();
 		if(ris!=0)

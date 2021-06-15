@@ -1,13 +1,15 @@
+import java.util.HashSet;
 import java.util.Set;
 
 public class Aula {
 	private Set<Studente> studenti;
 	
-	public Aula() { /* scrivere il codice */ }
+	public Aula() { 
+		this.studenti = new HashSet<>();
+	}
 	
 	public boolean addStudente(Studente studente) {
-		// scrivere il codice
-		return true;
+		return this.studenti.add(studente);
 	}
 	
 }
