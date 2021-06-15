@@ -13,11 +13,11 @@ public interface CostantiGUI {
 	
 	static final public Color COLORE_BORDO  = LIGHT_GRAY;
 
-	static public String RISORSA_IMMAGINE_BIANCO = "dist/white.png";
+	static public String RISORSA_IMMAGINE_BIANCO = "white.png";
 
-	static public String RISORSA_IMMAGINE_ROSSO = "dist/red.png";
+	static public String RISORSA_IMMAGINE_ROSSO = "red.png";
 
-	static public String RISORSA_IMMAGINE_MATTONE = "dist/brick.png";
+	static public String RISORSA_IMMAGINE_MATTONE = "brick.png";
 
 	static public float IMMAGINE_SCALA = 1.2f;
 
