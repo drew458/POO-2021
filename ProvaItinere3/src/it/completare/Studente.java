@@ -18,7 +18,7 @@ public class Studente {
 	
 	@Override
 	public boolean equals(Object o) {
-		return null;
+		return false;
 	}
 
 	public String getNome() {
