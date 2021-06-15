@@ -1,8 +1,5 @@
 package dist.pers;
 
-import static dist.gui.CostantiGUI.RISORSA_IMMAGINE_BIANCO;
-import static dist.gui.LettoreImmagini.leggiImmagineOggetto;
-
 import java.awt.Image;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -12,28 +9,23 @@ import dist.sim.Ambiente;
 import dist.sim.Coordinate;
 import dist.sim.GeneratoreCasuale;
 
-public class Persona {
-
-	static final private Image IMMAGINE_BIANCA = leggiImmagineOggetto(RISORSA_IMMAGINE_BIANCO);
+public abstract class Persona {
 	
-	static private int progId;
 	private final int id;
 	private Ambiente ambiente;
 	private Coordinate posizione;    // posizione corrente
 
-	public Persona(Ambiente ambiente) {		
+	public Persona(Ambiente ambiente, int progId) {		
 		this.ambiente = ambiente;
 		this.posizione = GeneratoreCasuale.posizioneCasuale();
-		this.id = progId++;
+		this.id = progId;
 	}
 
 	public Ambiente getAmbiente() {
 		return this.ambiente;
 	}
 
-	public Image getImmagine() {
-		return IMMAGINE_BIANCA;
-	}
+	public abstract Image getImmagine();
 
 	public int getId() {
 		return this.id;

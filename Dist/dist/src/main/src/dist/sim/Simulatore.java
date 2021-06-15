@@ -13,6 +13,8 @@ import java.util.Set;
 import javax.swing.SwingUtilities;
 
 import dist.gui.GUI;
+import dist.pers.Attenta;
+import dist.pers.Distratta;
 import dist.pers.Persona;
 import dist.stats.Statistiche;
 
@@ -35,12 +37,17 @@ public class Simulatore {
 	/** DA AGGIORNARE (VEDI DOMANDA 2) **/
 	private void creaPopolazione() {
 		for(int i=0; i<NUMERO_INIZIALE_PER_TIPOLOGIA; i++) {
-			this.ambiente.add(this.creaPersona());
+			this.ambiente.add(this.creaAttenta());
+			this.ambiente.add(this.creaDistratta());
 		}
 	}
 
-	public Persona creaPersona() {
-		return new Persona(this.ambiente);
+	public Persona creaAttenta() {
+		return new Attenta(this.ambiente);
+	}
+	
+	public Persona creaDistratta() {
+		return new Distratta(this.ambiente);
 	}
 
 	public List<Persona> getPersona() {

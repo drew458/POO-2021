@@ -1,7 +1,6 @@
 package dist.pers;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -27,15 +26,14 @@ public class PersonaTest {
 	@Test
 	public void testIdProgressiviPerPersoneStessoTipo() {
 		// DA RIVEDERE VEDI DOMANDA 2a
-		assertEquals("Gli id sono progressivi base 0 per ciascun tipo dinamico!", 0, new Persona(this.ambiente).getId());
-		assertEquals("Gli id sono progressivi base 0 per ciascun tipo dinamico!", 1, new Persona(this.ambiente).getId());
+		assertEquals("Gli id sono progressivi base 0 per ciascun tipo dinamico!", 0, new Attenta(this.ambiente).getId());
+		assertEquals("Gli id sono progressivi base 0 per ciascun tipo dinamico!", 1, new Attenta(this.ambiente).getId());
 	}
 
 	@Test
 	public void testIdProgressiviPerPersoneTipoDiverso() {
-		// DA COMPLETARE VEDI DOMANDA 2a
-		// Tipi di persone diverse hanno due serie di id distinte
-		fail("DA COMPLETARE");
+		assertEquals("Gli id sono progressivi base 0 per ciascun tipo dinamico!", 0, new Distratta(this.ambiente).getId());
+		assertEquals("Gli id sono progressivi base 0 per ciascun tipo dinamico!", 1, new Distratta(this.ambiente).getId());
 	}
 
 }
