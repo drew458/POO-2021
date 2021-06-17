@@ -35,6 +35,18 @@ public class Tragitto {
 	}
 	
 	@Override
+	public int hashCode() {
+		return this.getOrigine().hashCode() + this.getDestinazione().hashCode() + this.getAuto().hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Tragitto that = (Tragitto) obj;
+		return this.getDestinazione().equals(that.getDestinazione()) && this.getOrigine().equals(that.getOrigine()) 
+				&& this.getAuto().equals(that.getAuto());
+	}
+
+	@Override
 	public String toString() {
 		return this.getOrigine()+"->"+this.getDestinazione();
 	}

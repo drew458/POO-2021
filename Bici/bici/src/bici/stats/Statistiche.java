@@ -67,8 +67,27 @@ public class Statistiche {
 	 *         percorso, come valori il numero di tali percorsi
 	 */
 	public SortedMap<Coordinate,Integer> utilizzi(Map<Bici, List<Percorso>> bici2percorsi) {
-		// DA COMPLETARE (VEDI DOMANDA 4)
-		return Collections.emptySortedMap();
+		final Map<Coordinate, Integer> map = new HashMap<>();
+		
+		for(List<Percorso> percorso : bici2percorsi.values()) {
+			for(Percorso p : percorso) {
+				conta(map, p.getOrigine());
+				conta(map, p.getDestinazione());
+			}
+		}
+		
+		SortedMap<Coordinate, Integer> m = new TreeMap<>(new Comparator<Coordinate>() {
+
+			@Override
+			public int compare(Coordinate c1, Coordinate c2) {
+				int n = map.get(c2) - map.get(c1);
+				
+				if(n==0)
+					n = c2.compareTo(c1);
+				
+				return n;
+			}
+		});
 	}
 	
 	/**

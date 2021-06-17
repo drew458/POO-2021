@@ -102,13 +102,13 @@ public abstract class Auto {
 
 	@Override
 	public int hashCode() {
-		return this.getId();
+		return this.getId()+this.getClass().hashCode();
 	}
 
 	@Override
 	public boolean equals(Object o) {
-		final Auto that = (Auto)o;
-		return Objects.equals(this.getId(), that.getId());
+		final Auto that = (Auto) o;
+		return Objects.equals(this.getId(), that.getId()) && Objects.equals(this.getClass(), that.getClass());
 	}
 
 	public abstract Image getImmagine();

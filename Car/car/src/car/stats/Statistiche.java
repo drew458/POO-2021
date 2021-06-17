@@ -69,19 +69,37 @@ public class Statistiche {
 	 *         tragitto, come valori il numero di tali tragitti
 	 */
 	public SortedMap<Coordinate,Integer> utilizzi(List<Tragitto> tragitti) {
-		Map<Coordinate, Integer>  posizione2tragitti = new HashMap<>();
-		Integer numeroTragitti;
+		final Map<Coordinate, Integer> posizione2tragitti = new HashMap<>();
 		
 		for(Tragitto t : tragitti) {
-			if(posizione2tragitti.containsKey(t.getOrigine())) {
-				numeroTragitti = posizione2tragitti.get(t);
-				posizione2tragitti.put(t.getOrigine(), numeroTragitti++);
-			}
-			if(posizione2tragitti.containsKey(t.getDestinazione())){
-				numeroTragitti = posizione2tragitti.get(t);
-				posizione2tragitti.put(t.getDestinazione(), numeroTragitti++);
-			}
+			this.aggiungiAmappa(t.getOrigine(), posizione2tragitti);
+			
+			this.aggiungiAmappa(t.getDestinazione(), posizione2tragitti);
+			
 		}
+		
+		SortedMap<Coordinate, Integer> risultato = new TreeMap<>(new Comparator<Coordinate>() {
+
+			@Override
+			public int compare(Coordinate c1, Coordinate c2) {
+				int res = posizione2tragitti.get(c2) - posizione2tragitti.get(c1);
+				if(res == 0)
+					return c2.compareTo(c1);
+				return res;
+			}
+		});
+		
+		risultato.putAll(posizione2tragitti);
+		
+		return risultato;
+	}
+	
+	private void aggiungiAmappa(Coordinate c, Map<Coordinate, Integer> map) {
+		if(map.containsKey(c)) {
+			map.put(c, map.get(c)+1);
+		}
+		else
+			map.put(c, 1);
 	}
 	
 	/**

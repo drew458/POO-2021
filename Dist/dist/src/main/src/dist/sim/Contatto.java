@@ -6,7 +6,7 @@ import dist.pers.Persona;
 
 public class Contatto {
 
-	private int passoSimulazione; //il passo della simulazione in cui Ã¨ avvenuto il contatto
+	private int passoSimulazione; //il passo della simulazione in cui è avvenuto il contatto
 	private Set<Persona> coinvolti;
 	private Coordinate luogo;
 

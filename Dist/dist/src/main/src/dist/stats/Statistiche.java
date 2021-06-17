@@ -1,10 +1,12 @@
 package dist.stats;
 
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import dist.pers.Persona;
 import dist.sim.Contatto;
 import dist.sim.Simulatore;
 
@@ -20,23 +22,34 @@ public class Statistiche {
 		System.out.println(simulatore.getContatti());
 		System.out.println();
 
-		final Map<Object,List<Object>> mappa = produciStatistiche(simulatore.getContatti());
+		final Map<Persona,List<Contatto>> mappa = produciStatistiche(simulatore.getContatti());
 		System.out.println("Statistica:");
 		stampaStatistiche(mappa);
 		System.out.println();
 	}
 
-	public Map<Object, List<Object>> produciStatistiche(Set<Contatto> contatti) {
-		// DA COMPLETARE (VEDI DOMANDA 3)
-		return Collections.emptyMap();
+	public Map<Persona, List<Contatto>> produciStatistiche(Set<Contatto> contatti) {
+		Map<Persona, List<Contatto>> persona2contatti = new HashMap<>();
+		
+		for(Contatto c : contatti) {
+			for(Persona p : c.getCoinvolti()) {
+				if(persona2contatti.containsKey(p))
+					persona2contatti.get(p).add(c);
+				else {
+					persona2contatti.put(p, new ArrayList<Contatto>());
+					persona2contatti.get(p).add(c);
+				}
+			}
+		}
+		return persona2contatti;
 	}
 
 	/**
 	 * <EM>N.B. UTILE PER STAMPARE RISULTATI DOMANDA 3</EM>
 	 */
-	private void stampaStatistiche(final Map<Object, List<Object>> mappa) {
+	private void stampaStatistiche(final Map<Persona, List<Contatto>> mappa) {
 		for(Object key : mappa.keySet()) {
-			final List<Object> l = mappa.get(key);
+			final List<Contatto> l = mappa.get(key);
 			System.out.print(key + " è stato coinvolto in :");
 			for(Object c : l) 
 				System.out.print(c.toString() + " ");

@@ -48,5 +48,12 @@ public class Coordinate {
 	public String toString() {
 		return "("+getX()+","+getY()+")";
 	}
+	
+	public int compareTo(Coordinate that) {
+		int res = this.getX()-that.getY();
+		if(res==0)
+			return this.getY()-that.getY();
+		return res;
+	}
 
 }
