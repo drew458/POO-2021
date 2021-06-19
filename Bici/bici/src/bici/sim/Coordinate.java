@@ -49,4 +49,8 @@ public class Coordinate {
 		return this.getX() + this.getY()*31;
 	}
 
+	public int compareTo(Coordinate that) {
+		return this.getX() - that.getX();
+	}
+
 }

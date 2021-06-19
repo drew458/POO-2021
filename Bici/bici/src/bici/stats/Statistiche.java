@@ -67,29 +67,40 @@ public class Statistiche {
 	 *         percorso, come valori il numero di tali percorsi
 	 */
 	public SortedMap<Coordinate,Integer> utilizzi(Map<Bici, List<Percorso>> bici2percorsi) {
-		final Map<Coordinate, Integer> map = new HashMap<>();
+		final Map<Coordinate, Integer> coordinate2utilizzi = new HashMap<>();
 		
 		for(List<Percorso> percorso : bici2percorsi.values()) {
 			for(Percorso p : percorso) {
-				conta(map, p.getOrigine());
-				conta(map, p.getDestinazione());
+				conta(coordinate2utilizzi, p.getOrigine());
+				conta(coordinate2utilizzi, p.getDestinazione());	
 			}
 		}
 		
-		SortedMap<Coordinate, Integer> m = new TreeMap<>(new Comparator<Coordinate>() {
+		SortedMap<Coordinate, Integer> risultato = new TreeMap<>(new Comparator<Coordinate>() {
 
 			@Override
 			public int compare(Coordinate c1, Coordinate c2) {
-				int n = map.get(c2) - map.get(c1);
+				int cmp = coordinate2utilizzi.get(c2) - coordinate2utilizzi.get(c1);
 				
-				if(n==0)
-					n = c2.compareTo(c1);
+				if(cmp==0)
+					cmp = c2.compareTo(c1);
 				
-				return n;
+				return cmp;
 			}
 		});
+		risultato.putAll(coordinate2utilizzi);
+		return risultato;
 	}
 	
+	private void conta(Map<Coordinate, Integer> coordinate2utilizzi, Coordinate coordinata) {
+		if(coordinate2utilizzi.containsKey(coordinata)) {
+			Integer occorrenze = new Integer(coordinate2utilizzi.get(coordinata).intValue()+1);
+			coordinate2utilizzi.put(coordinata, occorrenze);
+		}
+		else 
+			coordinate2utilizzi.put(coordinata, 1);
+	}
+
 	/**
 	 * <EM>N.B. UTILE PER STAMPARE RISULTATI DOMANDA 4</EM>
 	 * @param classifica delle posizioni piu' usate
