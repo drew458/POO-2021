@@ -1,6 +1,13 @@
 package bici.stats;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 import bici.sim.Coordinate;
 import bici.sim.Percorso;
@@ -94,6 +101,7 @@ public class Statistiche {
 	
 	private void conta(Map<Coordinate, Integer> coordinate2utilizzi, Coordinate coordinata) {
 		if(coordinate2utilizzi.containsKey(coordinata)) {
+			@SuppressWarnings("deprecation")
 			Integer occorrenze = new Integer(coordinate2utilizzi.get(coordinata).intValue()+1);
 			coordinate2utilizzi.put(coordinata, occorrenze);
 		}

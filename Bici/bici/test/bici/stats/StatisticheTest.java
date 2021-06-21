@@ -5,8 +5,6 @@ import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 
-import bici.stats.Statistiche;
-
 public class StatisticheTest {
 
 	@SuppressWarnings("unused")
