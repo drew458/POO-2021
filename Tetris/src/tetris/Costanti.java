@@ -8,10 +8,10 @@ public interface Costanti {
 
 
 	static final public int TEMPO_BASE_MIN = 100;
-	
+
 	static final public int TEMPO_BASE = 1000;
-	
-	static final public int RITMO = 2; // deve essere>0; 1 MAX velocitÃ 	
+
+	static final public int RITMO = 2; // deve essere>0; 1 MAX velocità	
 
 	static final public int PUNTI_PER_LIVELLO = 100;
 
@@ -27,5 +27,5 @@ public interface Costanti {
 	static final public int DIM_CELLE = 30;
 
 	static final public Color COLORE_BORDO = GRAY;
-	
+
 }

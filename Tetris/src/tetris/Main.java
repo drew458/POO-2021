@@ -7,14 +7,14 @@ import java.awt.Robot;
 
 /**
  * <P>
- * Credits: Ã¨ un refactoring di uno dei tanti cloni Java di Tetris 
+ * Credits: è un refactoring di uno dei tanti cloni Java di Tetris 
  * disponibili online, ad es.
  * <A href="https://bitbucket.org/repo/all?name=tetris">
  * https://bitbucket.org/repo/all?name=tetris
  * </A>
  * </P>
  * <BR/>
- * Il codice Ã¨ stato rivisto con questi obiettivi didattici principali:
+ * Il codice è stato rivisto con questi obiettivi didattici principali:
  * <ul>
  * <li> preparare un esercizio sulle collezioni ed in particolare 
  *      {@link java.util.SortedSet}

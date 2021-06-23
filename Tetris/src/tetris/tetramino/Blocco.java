@@ -10,7 +10,7 @@ package tetris.tetramino;
 public class Blocco {
 
 	private int dx;
-	
+
 	private int dy;
 
 	public Blocco(int dx, int dy) {

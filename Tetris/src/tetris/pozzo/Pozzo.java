@@ -2,12 +2,9 @@ package tetris.pozzo;
 
 import static tetris.Costanti.COLORE_BORDO;
 
-import java.util.Comparator;
 import java.util.NavigableSet;
 import java.util.Set;
-import java.util.TreeSet;
 
-import tetris.Costanti;
 import tetris.tetramino.Tetramino;
 
 /**
@@ -19,7 +16,7 @@ import tetris.tetramino.Tetramino;
  * <BR/>
  * Contiene un insieme di oggetti {@link Cella} che derivano dagli oggetti
  * {@link Tetramino} una volta che questi raggiunge il fondo del pozzo e
- * collide con una {@link Cella} già  presente. 
+ * collide con una {@link Cella} già presente. 
  * <BR/>
  * Le righe completate sono rimosse invocando il metodo 
  * {@link #aggiungiCelleErimuoviRigheCompletate(Set)}
@@ -94,7 +91,7 @@ public class Pozzo {
 	 * @param h altezza
 	 */
 	public Pozzo(int l, int h) {
-		this.celle = new TreeSet<>(); /*DA COMPLETARE*/
+		this.celle = null; /*DA COMPLETARE*/
 		this.l = l;
 		this.a = h;
 		this.addBordo(l, h);
@@ -143,7 +140,7 @@ public class Pozzo {
 		/* aggiungi le nuove celle */
 		this.celle.addAll(celle);
 
-		/* controlla le linee dalla piÃ¹ in basso verso l'alto (y decrescenti) */
+		/* controlla le linee dalla più in basso verso l'alto (y decrescenti) */
 		final NavigableSet<Integer> righeCoinvolte = getInsiemeOrdinateY(celle);
 		int contatoreRimosse = 0;
 		while (!righeCoinvolte.isEmpty()) {
@@ -168,10 +165,7 @@ public class Pozzo {
 	 */
 	public NavigableSet<Integer> getInsiemeOrdinateY(Set<Cella> inputCelle) {
 		/* DA COMPLETARE (esercizio 2) */
-		NavigableSet<Integer> risultato = new TreeSet<>();
-		for(Cella cella : inputCelle)
-			risultato.add(cella.getPosizione().getY());
-		return risultato;
+		return null;
 	}
 
 	/**
@@ -202,11 +196,7 @@ public class Pozzo {
 	 */
 	public Set<Cella> getCelleDellaRigaSenzaBordo(int riga) {
 		/* DA COMPLETARE (senza iterazioni - esercizio 3) */
-		if(riga == this.a -1) return new TreeSet<>();	//l'invocazione del metodo sull'ultima riga (il bordo) deve ritornare insieme vuoto
-		return new TreeSet<>(
-				this.celle.subSet(new Cella(0,riga,Costanti.COLORE_BORDO), false,
-						new Cella(this.l-1,riga, COLORE_BORDO), false)
-				);
+		return null;
 	}
 
 	/**
@@ -215,28 +205,12 @@ public class Pozzo {
 	 * @return il  @link {@link NavigableSet} di tutte le celle attualmente nel
 	 *         pozzo e sopra la riga passata come riferimento; le celle sono 
 	 *         ordinate per Y decrescente delle rispettive posizioni, ed a
-	 *         parità  di Y, per X.
+	 *         parità di Y, per X.
 	 *         N.B. il risultato non include le celle del bordo! */
 
 	public NavigableSet<Cella> getCelleSopraRigaYdecrescente(int riga) {
 		/* DA COMPLETARE (senza iterazioni - esercizio 4) */
-		NavigableSet<Cella> righeSopra = new TreeSet<>(
-				new Comparator<Cella>() {
-					@Override
-					public int compare(Cella o1, Cella o2) {
-						int xDiff = o1.getPosizione().getX() - o2.getPosizione().getX();
-						if(xDiff != 0)
-							return xDiff;
-						return o1.getPosizione().getY() - o2.getPosizione().getY();
-					}
-				});
-		righeSopra.addAll(this.celle.headSet(new Cella(0,riga,COLORE_BORDO),false));
-		NavigableSet<Cella> risultato = new TreeSet<>(new ComparatoreCelleDecrescente());
-		risultato.addAll(
-				righeSopra.subSet(new Cella(1,0,Costanti.COLORE_BORDO), true,
-						new Cella(this.l-1,0,Costanti.COLORE_BORDO),false)
-				);
-		return risultato;
+		return null;
 	}
 
 }

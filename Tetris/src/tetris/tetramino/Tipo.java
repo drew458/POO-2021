@@ -14,11 +14,11 @@ import java.awt.Color;
  * @see https://it.wikipedia.org/wiki/Tetramino
  */
 public enum Tipo {
-    /* nome(colore,
-     * 	tetramino(blocco(x0,y0),...,blocco(x3,y3)) rotazione 0;
-     *  ...                     ...                     ...
-     * 	tetramino(blocco(x0,y0),...,blocco(x3,y3)) rotazione 3; 
-     */
+	/* nome(colore,
+	 * 	tetramino(blocco(x0,y0),...,blocco(x3,y3)) rotazione 0;
+	 *  ...                     ...                     ...
+	 * 	tetramino(blocco(x0,y0),...,blocco(x3,y3)) rotazione 3; 
+	 */
 	I(cyan,
 			tetramino(blocco(0, 1), blocco(1, 1), blocco(2, 1), blocco(3, 1)),
 			tetramino(blocco(1, 0), blocco(1, 1), blocco(1, 2), blocco(1, 3)),
@@ -62,7 +62,7 @@ public enum Tipo {
 	private Color colore;
 
 	private Blocco[][] blocchi;
-	
+
 	private Tipo(Color colore, Blocco[]... blocchi) {
 		this.colore = colore;
 		this.blocchi = blocchi;

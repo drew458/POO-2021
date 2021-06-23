@@ -9,7 +9,7 @@ import tetris.pozzo.Posizione;
 public class Tetramino {
 
 	static final public int MAX_ROTAZIONI = 4;
-	
+
 	private Posizione posizione; // del tetramino
 
 	private int rotazione; // 0,1,2,3 %MAX_ROTAZIONI
@@ -18,13 +18,13 @@ public class Tetramino {
 	 * @see {@link Tipo}
 	 */
 	private Tipo tipo;
-	
+
 	public Tetramino(Posizione posizione, int rotazione, Tipo tipo) {
 		this.posizione = posizione;
 		this.rotazione = rotazione;
 		this.tipo = tipo;
 	}
-	
+
 	/**
 	 * @return la {@link Posizione} di questo {@link Tetramino}
 	 */
@@ -70,8 +70,8 @@ public class Tetramino {
 	public void ruota(int delta) {
 		this.rotazione = ( this.rotazione + delta + MAX_ROTAZIONI) % MAX_ROTAZIONI ;
 	}
-	
-	
+
+
 	/**
 	 * Trasla la posizione di questo  {@link Tetramino}
 	 * @param dx
@@ -92,10 +92,10 @@ public class Tetramino {
 			posizioni.add(this.getPosizione().traslata(blocco.getDX(), blocco.getDY()));
 		return posizioni;
 	}
-	
+
 	@Override
 	public String toString() {
 		return getTipo()+" "+getPosizione()+"/"+getRotazione();
 	}
-	
+
 }

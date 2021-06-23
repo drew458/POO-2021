@@ -138,7 +138,7 @@ public class Game {
 	public Pozzo getPozzo() {
 		return this.pozzo;
 	}
-	
+
 	/**
 	 * Termina la partita corrente stampando il punteggio finale da console
 	 */
@@ -147,7 +147,7 @@ public class Game {
 		System.exit(-1);
 	}
 
-	
+
 	/**
 	 * 
 	 * @return tempo in millisecondi che intercorre tra due spostamenti automatici
@@ -160,7 +160,7 @@ public class Game {
 	/**
 	 * 
 	 * @return true se e solo se il tetramino corrente 
-	 *              occupa un cella gi√† occupata
+	 *              occupa un cella gi‡ occupata
 	 */
 	private boolean inCollisione() {
 		for (final Cella c : getCelleDelTetramino()) {
@@ -169,7 +169,7 @@ public class Game {
 		return false;
 	}
 
-	
+
 	/**
 	 * Ferma la caduta del pezzo nel pozzo decomponendo
 	 * i suoi {@link Blocco} in {@link Cella} del {@link Pozzo}
@@ -188,12 +188,12 @@ public class Game {
 	public Set<Cella> getCelleDelTetramino() { 
 		final Tetramino tetramino = this.getCorrente();
 		final Set<Cella> celle = new HashSet<>();
-		
+
 		for(Posizione finale : tetramino.getPosizioneDeiBlocchi()) {
 			/* le celle di un tetramino prendono il suo colore */
 			celle.add(new Cella(finale, tetramino.getColore()));
 		}
-		
+
 		return celle;
 	}
 }

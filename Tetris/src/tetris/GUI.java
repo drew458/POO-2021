@@ -20,7 +20,7 @@ public class GUI extends JPanel {
 	static final private long serialVersionUID = 0L;
 
 	static final public int VK_HEARTBEAT = VK_SHIFT; // meglio un tasto "innocuo"
-	
+
 	final private Game game;
 
 	final private JFrame jframe;
