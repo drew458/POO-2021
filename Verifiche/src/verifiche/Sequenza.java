@@ -1,3 +1,4 @@
+package verifiche;
 
 public class Sequenza {
 	private int[] sequenza;

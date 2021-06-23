@@ -1,3 +1,4 @@
+package verifiche;
 /**
    Obiettivo: verifica comprensione array e riferimenti
 

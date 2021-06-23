@@ -1,3 +1,4 @@
+package verifiche;
 /**
    Obiettivo: verifica comprensione variabili locali, variabili di istanza, parametri
 

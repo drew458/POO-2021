@@ -1,3 +1,4 @@
+package it.classi;
 
 public class Boo {
 

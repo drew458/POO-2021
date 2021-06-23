@@ -1,6 +1,8 @@
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+import verifiche.Sequenza;
+
 public class ComandoTest {
 
 	@Test

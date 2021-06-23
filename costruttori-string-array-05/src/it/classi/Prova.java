@@ -1,3 +1,4 @@
+package it.classi;
 public class Prova {
 	static void fe(long i) { 
 		System.out.println("long");
