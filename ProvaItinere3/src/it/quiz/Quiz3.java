@@ -25,7 +25,7 @@ public class Quiz3 {
 }
 
 /**
- * luca elisabetta elisabetta
+ * - luca elisabetta elisabetta
  * paolo luca antonio elisabetta
  * paolo elisabetta
  * paolo antonio elisabetta

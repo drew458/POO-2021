@@ -21,6 +21,6 @@ public class Quiz7 {
  * Il codice non compila
  * Il signore degli Anelli
  * Il Ritorno del Re
- * Le Due Torri
+ * - Le Due Torri
  * Nessuna delle altre 
 */

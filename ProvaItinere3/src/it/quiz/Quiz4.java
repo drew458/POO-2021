@@ -12,7 +12,7 @@ public class Quiz4 {
 }
 
 /**
- * laptop.dimensioni(computer) laptop.fine()
+ * - laptop.dimensioni(computer) laptop.fine()
  * computer.dimensioni(computer) laptop.fine()
  * laptop.dimensioni(laptop) computer.fine()
  * laptop.dimensioni(computer) computer.fine()

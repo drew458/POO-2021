@@ -23,7 +23,7 @@ public class Quiz5 {
 }
 
 /**
- * zorro mostri zorro cronosisma
+ * - zorro mostri zorro cronosisma
  * zorro mostri cronosisma
  * cronosisma mostri zorro zorro
  * cronosisma mostri zorro

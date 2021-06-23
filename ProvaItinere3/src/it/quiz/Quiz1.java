@@ -28,7 +28,7 @@ public class Quiz1 {
 }
 
 /*
- *  Dimensione Larga Stretta
+ *  - Dimensione Larga Stretta
  *  Dimensione Dimensione Dimensione
  *  Dimensione Larga Larga
  *  Stretta Larga Stretta

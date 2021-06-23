@@ -25,8 +25,8 @@ public class Quiz2 {
 	}
 }
 
-/**
-Stefano Luca Paolo
+/*
+ - Stefano Luca Paolo
 Luca Paolo Stefano
 Polo Luca Paolo
 1 2 3 1

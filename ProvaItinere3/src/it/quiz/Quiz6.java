@@ -13,7 +13,7 @@ public class Quiz6 {
 
 /**
  * Il codice non compila
- * 1/5
+ * - 1/5
  * 3/5
  * 5/5
  * Nessuna delle altre 
