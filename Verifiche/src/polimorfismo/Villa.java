@@ -1,4 +1,4 @@
-package verifiche;
+package polimorfismo;
 
 /*
   Obiettivo: verifica comprensione tipi statici e dinamici

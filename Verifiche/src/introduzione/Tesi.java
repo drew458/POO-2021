@@ -1,4 +1,4 @@
-package verifiche;
+package introduzione;
 /*
    Obiettivo: verifica comprensione riferimenti ad oggetti
 
@@ -79,6 +79,13 @@ public class Tesi {
 	}
 
 }
+
+/*
+ * bruni antonio 33
+ * gates bill 44
+ * taddei mariolina 33
+ * i misteri di windows
+*/
 
 class Persona {
 	String nome;

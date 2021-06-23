@@ -1,4 +1,4 @@
-package verifiche;
+package introduzione;
 /**
    Obiettivo: verifica comprensione variabili locali, variabili di istanza, parametri
 
@@ -45,3 +45,11 @@ public class Sommatore {
 		System.out.println(s.sommaStrana(3,2));
 	}
 }
+
+/*
+ * 70
+ * 0
+ * 5
+ * 42
+ *
+*/

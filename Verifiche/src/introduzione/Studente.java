@@ -1,4 +1,4 @@
-package verifiche;
+package introduzione;
 /**
    Obiettivo: verifica comprensione array e riferimenti
 
@@ -41,3 +41,8 @@ public class Studente {
 	            System.out.print(studenti[i].getNome()+" ");
 	    }
 }
+
+/*
+ * giorgio paolo paolo
+ * 
+*/

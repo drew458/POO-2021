@@ -1,4 +1,4 @@
-package verifiche;
+package polimorfismo;
 
 /*
    Obiettivo: verifica comprensione overloading con le interfacce

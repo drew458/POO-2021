@@ -1,4 +1,4 @@
-package verifiche;
+package polimorfismo;
 
 /* obiettivo: verificare comprensione dettagli ereditarieta'
 
