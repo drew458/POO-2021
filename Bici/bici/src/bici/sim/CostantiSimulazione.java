@@ -3,7 +3,7 @@ package bici.sim;
 public class CostantiSimulazione {
 
 	/**
-	 * La {@link Zona} Ã¨ un quadrato di queste dimensioni (incluso i bordi)
+	 * La {@link Zona} è un quadrato di queste dimensioni (incluso i bordi)
 	 */
 	static final public int DIMENSIONE = 30;
 
@@ -20,7 +20,7 @@ public class CostantiSimulazione {
 	/**
 	 * Pausa (in millisecondi) tra due passi consecutivi della simulazione
 	 */
-	static final public int RITMO  = 25; // millis
+	static final public int RITMO  = 50; // millis
 
 	/**
 	 * Il numero totale di destinazioni coperte

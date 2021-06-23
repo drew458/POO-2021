@@ -44,11 +44,11 @@ public class Simulatore {
 		}
 	}
 	
-	private Bici creaGialla() {
+	private Gialla creaGialla() {
 		return new Gialla(this.getZona());
 	}
 
-	public Bici creaBianca() {
+	public Bianca creaBianca() {
 		return new Bianca(this.getZona());
 	}
 
@@ -88,7 +88,12 @@ public class Simulatore {
 		
 
 		/* VEDI DOMANDA 6 */
-		
+		try {
+			this.gui.getInterruptingThread().join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println("Simulazione terminata.");
 		
 		/**

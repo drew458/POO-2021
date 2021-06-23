@@ -1,11 +1,12 @@
 package bici.sim;
 
+import bici.tipo.Bianca;
 import bici.tipo.Bici;
 
 /**
  * Modella un percorso da un'origine ad una destinazione,
  * entrambe modellate da un oggetto {@link Coordinate} da parte di
- * una generica bici, ad es. (ma non solo!) di tipo {@link Bici}
+ * una generica bici, ad es. (ma non solo!) di tipo {@link Bianca}
  */
 public class Percorso {
 
@@ -57,13 +58,14 @@ public class Percorso {
 	// SUGG.: VEDI DOMANDA 3
 	@Override
 	public int hashCode() {
-		return this.getOrigine().hashCode()+this.getDestinazione().hashCode();
+		return this.getOrigine().hashCode()+this.getDestinazione().hashCode()+this.getPassoIniziale()+this.getBici().hashCode();
 	}
 
 	@Override
 	public boolean equals(Object o) {
 		final Percorso that = (Percorso)o;
-		return this.getOrigine().equals(that.getOrigine()) && this.getDestinazione().equals(that.getDestinazione());
+		return this.getOrigine().equals(that.getOrigine()) && this.getDestinazione().equals(that.getDestinazione()) &&
+				this.getBici().equals(that.getBici()) && this.getPassoIniziale() == that.getPassoIniziale();
 	}
 	
 	@Override

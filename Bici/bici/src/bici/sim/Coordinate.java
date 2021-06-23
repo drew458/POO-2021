@@ -32,25 +32,30 @@ public class Coordinate {
 	public Coordinate trasla(Direzione dir) {
 		return new Coordinate(getX()+dir.getDx(), getY()+dir.getDy());
 	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (o==null || o.getClass()!=this.getClass()) return false;
+		
+		Coordinate that = (Coordinate)o;
+		return ( this.getX() == that.getX() && this.getY() == that.getY() );
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.getX() + this.getY();
+	}
 	
 	@Override
 	public String toString() {
 		return "("+getX()+","+getY()+")";
 	}
-	
-	@Override
-	public boolean equals(Object o) {
-		Coordinate that = (Coordinate) o;
-		return ( this.getX() == that.getX() && this.getY() == that.getY() ); 
-	}
-	
-	@Override
-	public int hashCode() {
-		return this.getX() + this.getY()*31;
-	}
 
 	public int compareTo(Coordinate that) {
-		return this.getX() - that.getX();
+		int cmp = this.getX() - that.getX();
+		if(cmp == 0)
+			cmp = this.getY() - that.getY();
+		return cmp;
 	}
 
 }

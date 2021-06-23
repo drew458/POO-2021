@@ -1,8 +1,8 @@
 package bici.stats;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -43,13 +43,17 @@ public class Statistiche {
 	 *         la lista dei percorsi coperti
 	 */
 	public Map<Bici, List<Percorso>> percorsiPerBici(Set<Percorso> percorsi) {
-		Map<Bici, List<Percorso>> bici2percorsi = new HashMap<>();
-		for(Percorso percorso : percorsi) {
-			Bici bici = percorso.getBici();
-			if(!bici2percorsi.containsKey(bici)) {
-				bici2percorsi.put(bici, new LinkedList<Percorso>());
+		// DA COMPLETARE (VEDI DOMANDA 3)
+		Map<Bici, List<Percorso>> bici2percorsi = new HashMap<Bici, List<Percorso>>();
+		for (Percorso p : percorsi) {
+			final Bici bici = p.getBici();
+			if (bici2percorsi.containsKey(bici)) {
+				bici2percorsi.get(bici).add(p);
 			}
-			bici2percorsi.get(bici).add(percorso);
+			else {
+				bici2percorsi.put(bici, new ArrayList<Percorso>());
+				bici2percorsi.get(bici).add(p);				
+			}
 		}
 		return bici2percorsi;
 	}
@@ -73,25 +77,25 @@ public class Statistiche {
 	 *         le posizioni piu' battute come origine o destinazione di un 
 	 *         percorso, come valori il numero di tali percorsi
 	 */
-	public SortedMap<Coordinate,Integer> utilizzi(Map<Bici, List<Percorso>> bici2percorsi) {
+	public SortedMap<Coordinate,Integer> utilizzi(final Map<Bici, List<Percorso>> bici2percorsi) {
 		final Map<Coordinate, Integer> coordinate2utilizzi = new HashMap<>();
-		
-		for(List<Percorso> percorso : bici2percorsi.values()) {
-			for(Percorso p : percorso) {
-				conta(coordinate2utilizzi, p.getOrigine());
-				conta(coordinate2utilizzi, p.getDestinazione());	
+		for(List<Percorso> percorsi : bici2percorsi.values())
+		{
+			for(Percorso p : percorsi)
+			{
+				conta(coordinate2utilizzi,p.getOrigine());
+				conta(coordinate2utilizzi,p.getDestinazione());
 			}
 		}
-		
 		SortedMap<Coordinate, Integer> risultato = new TreeMap<>(new Comparator<Coordinate>() {
-
+			
 			@Override
 			public int compare(Coordinate c1, Coordinate c2) {
 				int cmp = coordinate2utilizzi.get(c2) - coordinate2utilizzi.get(c1);
-				
-				if(cmp==0)
-					cmp = c2.compareTo(c1);
-				
+				if(cmp == 0)
+				{
+					cmp = c1.compareTo(c2);
+				}
 				return cmp;
 			}
 		});
@@ -100,13 +104,12 @@ public class Statistiche {
 	}
 	
 	private void conta(Map<Coordinate, Integer> coordinate2utilizzi, Coordinate coordinata) {
-		if(coordinate2utilizzi.containsKey(coordinata)) {
-			@SuppressWarnings("deprecation")
+		if(coordinate2utilizzi.containsKey(coordinata))
+		{
 			Integer occorrenze = new Integer(coordinate2utilizzi.get(coordinata).intValue()+1);
 			coordinate2utilizzi.put(coordinata, occorrenze);
 		}
-		else 
-			coordinate2utilizzi.put(coordinata, 1);
+		else coordinate2utilizzi.put(coordinata, new Integer(1));
 	}
 
 	/**

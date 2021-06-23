@@ -1,6 +1,8 @@
 package dist.stats;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +30,11 @@ public class Statistiche {
 		System.out.println();
 	}
 
+	/**
+	 * 
+	 * @param contatti
+	 * @return una mappa che metta in relazione ogni Persona con la lista dei contatti in cui ha preso parte
+	 */
 	public Map<Persona, List<Contatto>> produciStatistiche(Set<Contatto> contatti) {
 		Map<Persona, List<Contatto>> persona2contatti = new HashMap<>();
 		
@@ -39,7 +46,21 @@ public class Statistiche {
 					persona2contatti.put(p, new ArrayList<Contatto>());
 					persona2contatti.get(p).add(c);
 				}
+				Collections.sort(persona2contatti.get(p), new Comparator<Contatto>() {
+
+					@Override
+					public int compare(Contatto o1, Contatto o2) {
+						int differenza=o2.getCoinvolti().size()-o1.getCoinvolti().size();
+						if(differenza==0) {
+							return o1.getPassoSimulazione()-o2.getPassoSimulazione();
+						}
+						else {
+							return differenza;
+						}
+					}
+				});
 			}
+			
 		}
 		return persona2contatti;
 	}
