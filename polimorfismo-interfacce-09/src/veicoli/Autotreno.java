@@ -16,3 +16,8 @@ public class Autotreno implements Veicolo {
 	}
 
 }
+
+/* Stampa:
+ * Autotreno.func(Autotreno) 
+ * Autotreno.func(Veicolo)
+*/

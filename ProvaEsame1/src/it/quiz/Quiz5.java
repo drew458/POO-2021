@@ -22,3 +22,8 @@ public class Quiz5 {
 		System.out.print(alfa.getTarga()+" ");
 	}
 }
+
+/*
+ *  5 5 - 3 3 - 2 2
+ * 
+*/

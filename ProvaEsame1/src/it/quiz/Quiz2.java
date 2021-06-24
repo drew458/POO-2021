@@ -25,3 +25,8 @@ public class Quiz2 {
 			System.out.print(codice2nome.get(i.next())+" ");
 	}
 }
+
+/*
+ * stefano luca paolo
+ *
+*/

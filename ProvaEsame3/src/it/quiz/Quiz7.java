@@ -22,7 +22,7 @@ public class Quiz7 {
 	}
 }
 
-/* Honda BMW Suzuki Suzuki
+/* - Honda BMW Suzuki Suzuki
 
 * Suzuki Honda BMW
 

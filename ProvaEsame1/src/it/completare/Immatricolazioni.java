@@ -21,8 +21,8 @@ public class Immatricolazioni {
 
 	public List<Studente> elencoOrdinatoPerEtaMatricola() {
 		List<Studente> elencoOrdinato = new ArrayList<Studente>();
-		Collections.sort(elenco,new ComparatoreStudentePerEtaMatricola());
 		elencoOrdinato.addAll(elenco);
+		Collections.sort(elenco,new ComparatoreStudentePerEtaMatricola());
 		return elencoOrdinato;
 		
 		/* OPPURE */

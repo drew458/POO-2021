@@ -24,3 +24,8 @@ public class Quiz2 {
             System.out.print(matricola2agente.get(i.next())+" ");
     }
 }
+
+/*
+ * carli loschi rossi 
+ * 
+*/

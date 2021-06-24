@@ -30,3 +30,8 @@ public class Quiz1 {
 		m.scrivi(s);
 	}
 }
+
+/*
+ * dimensione larga stretta 
+ * 
+*/

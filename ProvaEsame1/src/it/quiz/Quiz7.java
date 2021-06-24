@@ -21,3 +21,8 @@ public class Quiz7 {
 			System.out.print(libro.getTitolo()+" ");
 	}
 }
+
+/*
+ * zorro mostri zorro cronosisma
+ *
+*/

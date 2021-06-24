@@ -33,7 +33,7 @@ public class Quiz3 {
 }
 
 
-/* Il programma stampa: autosnodato camion treno autosnodato
+/* - Il programma stampa: autosnodato camion treno autosnodato
 
 * Il programma stampa: autosnodato camion treno camion
 

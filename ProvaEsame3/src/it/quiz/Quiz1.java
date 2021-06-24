@@ -26,3 +26,8 @@ public class Quiz1 {
       q.mostra(u);
     }
 }
+
+/*
+ * coupe auto utilitaria 
+ * 
+*/

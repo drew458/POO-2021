@@ -11,3 +11,8 @@ public class Quiz6 {
 		a.dimensioni(b);
 	}
 }
+
+/*
+ * laptop.dimensioni(computer) laptop.fine()
+ * 
+*/
