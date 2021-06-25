@@ -37,3 +37,8 @@ public class Elicottero extends Velivolo  {
                 System.out.println(v.toString());
         }
 }
+
+/*
+ * elicottero-motore velivolo-motore velivolo-tipologia
+ * 
+*/
