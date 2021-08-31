@@ -4,8 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import contatori.VerificaDuplicati.Persone;
-
 public class VerificaDuplicatiTest {	
 	
 	@Test(timeout=200)

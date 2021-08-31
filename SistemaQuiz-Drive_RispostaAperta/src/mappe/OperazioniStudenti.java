@@ -43,11 +43,13 @@ public class OperazioniStudenti {
 		
 	public Map<Studente, Integer> getStudente2voto(Map<String, Studente> mat2stud, Map<String, Integer> mat2voto){
 		Map<Studente, Integer> stud2voto = new HashMap<>();
-		for(Studente stud : mat2stud.values()) {
+		for(String matricola : mat2voto.keySet()) { // L'insieme delle chiavi e' lo stesso per le due mappe
+			Studente studente = mat2stud.get(matricola);
+			Integer voto = mat2voto.get(matricola);
 			
+			if(voto!=null)
+				stud2voto.put(studente,voto);
 		}
-		
-		
 		return stud2voto;
 	}
 }
