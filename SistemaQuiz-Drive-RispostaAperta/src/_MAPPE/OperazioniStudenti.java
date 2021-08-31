@@ -43,7 +43,9 @@ public class OperazioniStudenti {
 		
 	public Map<Studente, Integer> getStudente2voto(Map<String, Studente> mat2stud, Map<String, Integer> mat2voto){
 		Map<Studente, Integer> stud2voto = new HashMap<>();
-		// Completare questo metodo
+		for(Studente stud : mat2stud.values()) {
+			
+		}
 		
 		
 		return stud2voto;
