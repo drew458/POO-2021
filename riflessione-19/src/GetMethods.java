@@ -1,7 +1,7 @@
 import java.lang.reflect.Method;
 import java.util.Iterator;
 
-public class EsempioRiflessione {
+public class GetMethods {
 	public static void main(String[] args) {
 		Class<Iterator> classeDiIterator = Iterator.class;
 		for (Method m : classeDiIterator.getMethods())

@@ -7,6 +7,6 @@ public class ForName {
 	//possono sollevarsi ClassNotFoundException
 	
 	//Usando questi metodi possiamo creare oggetti a 
-	//partire dal nome di una classe (deciso a tempo dinamico) contenuto in un oggetto String
+	//partire dal nome completamente qualificato di una classe (deciso a tempo dinamico) contenuto in un oggetto String
 
 }
