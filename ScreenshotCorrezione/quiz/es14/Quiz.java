@@ -51,3 +51,9 @@ public class Quiz {
 		x.print(obj);
 	}
 }
+
+/*
+ * print(K)
+ * -
+ * K  
+ */

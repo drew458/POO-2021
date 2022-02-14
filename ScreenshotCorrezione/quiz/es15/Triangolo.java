@@ -52,5 +52,9 @@ public class Triangolo {
 		
 		System.out.println(tri.getCoordinate().toString());
 	}
-	
 }
+
+/*
+ * Non compila perché la funzione getCoordinate() ritorna null 
+ * 
+*/

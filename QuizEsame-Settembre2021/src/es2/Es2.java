@@ -1,5 +1,6 @@
 package es2;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /* Scrivere il metodo statico invertiMappa che restituisce una nuova mappa, ottenuta invertendo chiavi
@@ -14,6 +15,18 @@ class Es2 {}
 class OperazioniSuMappe {
 	public static Map<String, Integer> invertiMappa(Map<Integer, String> mappaVecchia) {
 		//DA COMPLETARE
-		return null;
+		
+		Map<String, Integer> mappaNuova = new HashMap<>();
+		
+		for(int chiaveMappaVecchia : mappaVecchia.keySet()) {		
+			if(mappaNuova.containsKey(mappaVecchia.get(chiaveMappaVecchia))) {
+				int newValue = mappaNuova.get(mappaVecchia.get(chiaveMappaVecchia)) + chiaveMappaVecchia;
+				mappaNuova.put(mappaVecchia.get(chiaveMappaVecchia), newValue);
+			}
+			else {
+				mappaNuova.put(mappaVecchia.get(chiaveMappaVecchia), chiaveMappaVecchia);
+			}	
+		}
+		return mappaNuova;
 	}
 }

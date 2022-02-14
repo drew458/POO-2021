@@ -1,5 +1,7 @@
 package es11_2;
 
+/* Cosa stampa il seguente programma? */
+
 public class Automobile {
 	private int anno;
 	private String targa;
@@ -32,3 +34,9 @@ public class Automobile {
 		System.out.println(a3.toString());
 	}
 }
+
+/* 1111 - 99
+ * 2222 - 2
+ * 3333 - 99
+ * 3333 - 99
+*/

@@ -1,6 +1,7 @@
 package es12;
 
 /* Cosa stampa il seguente programma? */
+
 class Lavoratore extends Thread {
 	@Override
 	public void run() {
@@ -23,3 +24,10 @@ public class Quiz {
 		System.out.println("3 pensa");
 	}
 }
+
+/* 1 pensa
+ * 2 pensa
+ * 1 lavora
+ * 2 lavora
+ * 3 pensa
+*/

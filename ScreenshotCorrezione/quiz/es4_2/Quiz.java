@@ -51,6 +51,12 @@ public class Quiz {
 	}
 
 	private static void stampa(Coppia<? extends Emittente> c) {
-		c.getSecondo();
+		c.getSecondo().stampa();
 	}	
 }
+
+/*
+ * 
+ * Virgin Radio 
+ * 
+*/

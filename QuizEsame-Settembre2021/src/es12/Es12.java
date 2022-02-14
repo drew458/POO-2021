@@ -1,13 +1,10 @@
 package es12;
 
-public class Es12 {}
-
 /* Cosa stampa questo programma? */
 
 class ExampleException extends Exception{};
-	
-class ExampleClass {
-	
+
+public class Es12 {
 	private void exampleMethod(int k) throws ExampleException{
 		if(k>0)
 			System.out.println("K");
@@ -16,7 +13,7 @@ class ExampleClass {
 	}
 	
 	public static void main(String[] args) {
-		ExampleClass ec = new ExampleClass();
+		Es12 ec = new Es12();
 		
 		try {
 			ec.exampleMethod(5);
@@ -45,4 +42,9 @@ class ExampleClass {
  * 
  * K
  * A
+ * 
+ * K <-
+ * F <-
+ * A <-
+ * F <-
  */

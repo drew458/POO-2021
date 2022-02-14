@@ -20,7 +20,7 @@ public class Es9 {
 }
 
 /* Compila e viene stampata la stringa Risposta esatta
- * Compila, ma l'esecuzione solleva un eccezione di tipo MyException
+ * Compila, ma l'esecuzione solleva un eccezione di tipo MyException	<-
  * Non compila perché il metodo main() dichiara esplicitamente di lanciare un'eccezione di tipo MyException
  * Non compila perché il metodo m() non dichiara esplicitamente di poter lanciare un'eccezione di tipo MyException
  */

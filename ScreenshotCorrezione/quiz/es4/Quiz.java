@@ -2,7 +2,7 @@ package es4;
 
 /* Cosa stampa il programma? */
 
-class MyException extends RuntimeException
+class MyException extends RuntimeException {}
 
 public class Quiz {
 	private String x;
@@ -18,3 +18,8 @@ public class Quiz {
 		new Quiz().m();
 	}
 }
+
+/* 
+ * L'esecuzione lancia un eccezione di tipo MyException 
+ * 
+*/

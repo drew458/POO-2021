@@ -53,3 +53,8 @@ public class Quiz {
 		c.get(v).stampa();
 	}	
 }
+
+/* 
+ * Radio 24
+ * 
+*/

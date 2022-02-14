@@ -1,4 +1,4 @@
-package es1;
+package es3;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.Map;
  */
 class DimensioneDiversaException extends Exception {}
 
-public class Es1 {
+public class Es3 {
 	public <T> Map<T, T> unisci (List<T> l1, List<T> l2) throws DimensioneDiversaException{
 		Map<T, T> map = new HashMap<>();
 		
