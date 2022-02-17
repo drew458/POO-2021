@@ -7,7 +7,8 @@ import java.util.List;
 public class Es2 {
 
 	/**
-	 * metodo che ritorna booleano. Se la lista List<Integer> passata come parametro è strettamente crescente allora true se no false
+	 * metodo che ritorna booleano. Se la lista List<Integer> passata come parametro è strettamente crescente allora 
+	 * true se no false
 	 */
 	public Boolean isStrettamenteCrescente(List<Integer> l1) {
 		List<Integer> l2 = new ArrayList<>();

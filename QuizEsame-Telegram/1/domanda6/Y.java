@@ -43,3 +43,7 @@ public class Y extends X {
 		a1.dim(a);
 	}
 }
+
+/* 
+ * Z.dim(Y) Y.dim(X) 
+*/

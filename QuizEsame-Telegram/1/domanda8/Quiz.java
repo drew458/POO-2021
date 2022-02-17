@@ -35,3 +35,9 @@ public class Quiz {
 	}
 
 }
+
+
+/* Y
+ * greet(X)
+ * greet(X) 
+*/

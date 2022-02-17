@@ -1,4 +1,4 @@
-package es2;
+
 
 /* La classe ListaLimitata rappresenta una lista con capacità limitata. In questo esercizio il limite è stabilito dalla variabile
  * statica DIM_MASSIMA. Implementare il metodo add come segue:

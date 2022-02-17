@@ -35,3 +35,11 @@ public class Studente {
 	}
 
 }
+
+/*
+ * Anna
+ * Anna
+ * Anna
+ * Mario 
+ * 
+*/

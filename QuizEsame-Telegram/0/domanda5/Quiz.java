@@ -28,7 +28,7 @@ public class Quiz {
 	}
 
 	public static void main(String args[]) {
-		Quiz  m = new Quiz();
+		Quiz m = new Quiz();
 
 		Motocicletta g = new Motocicletta();
 		Automobile c = new Automobile();
@@ -36,9 +36,11 @@ public class Quiz {
 
 		s = c;
 
-		m.scrivi(s);
+ 		m.scrivi(s);
 		m.scrivi(c);
 		m.scrivi(g);
 	}
 }
 
+/*
+ * Automobile Automobile Motocicletta */

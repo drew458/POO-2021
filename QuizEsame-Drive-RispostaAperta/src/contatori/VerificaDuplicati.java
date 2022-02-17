@@ -4,10 +4,6 @@ package contatori;
 Implementare il metodo verificaDuplicati(String nome) che restituisce true se
 la variabile di istanza nomi contiene due o più occorrenze della stringa nome passata
 come parametro al metodo. Ritorna false altrimenti.
-
-Scrivere il codice del metodo metodo public boolean verificaDuplicati(String nome)
-affinche' ritorni true se nell'array nomi ci sono almeno due elementi uguali
-alla stringa nome passata come parametro, false altrimenti.
  */
 
 class Persone {

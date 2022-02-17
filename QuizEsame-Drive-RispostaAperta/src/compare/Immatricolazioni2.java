@@ -35,8 +35,9 @@ class Studente2 implements Comparable<Studente2> {
 class ComparatoreStudentePerEtaMatricola implements Comparator<Studente2> {
 
     public int compare(Studente2 p1, Studente2 p2) {
-        if(p1.getEta()-p2.getEta() != 0)
-        	return p1.getEta()-p2.getEta();
+    	int val = p1.getEta()-p2.getEta(); 
+        if(val != 0)
+        	return val;
         return p1.getMatricola().compareTo(p2.getMatricola());
 		
     }

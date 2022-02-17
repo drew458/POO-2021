@@ -8,9 +8,6 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import es7.DimensioneDiversaException;
-import es7.Es7;
-
 public class Es7Test {
 	
 	List<Integer> l1;

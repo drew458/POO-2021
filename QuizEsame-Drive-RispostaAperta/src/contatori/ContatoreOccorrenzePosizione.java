@@ -11,10 +11,7 @@ Esempio: se daControllare={"a", "b", "c"} e sequenza={"a","c","a","e"} allora il
 public class ContatoreOccorrenzePosizione {
 
     public int[] contaOccorrenze(String[] sequenza, String[] daControllare) {        
-        //Implementare questo metodo di modo
-        //che restituisca l'array contentente le occorrenze
-        //delle parole da controllare
-    	int cont=0;
+        int cont=0;
     	int[] risultato = new int[daControllare.length];
         for(int i=0; i<daControllare.length; i++) {
         	for(int j=0; j<sequenza.length; j++) {

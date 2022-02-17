@@ -48,4 +48,9 @@ public class Rettangolo {
 	}
 }
 
+/*
+ * Lancia un'eccezione perche getCoordinate() ritorna null 
+ * 
+ */
+
 

@@ -1,7 +1,6 @@
 package es4;
 
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,9 +24,8 @@ public class Es4 {
 			lista.remove(Collections.min(lista));
 			lista.addLast(valore);
 		}
-		Iterator<Integer> i = lista.iterator();
-		while(i.hasNext()) {
-			int elem = i.next();
+		
+		for(Integer elem : lista) {
 			if(elem == valore) {
 				lista.remove(elem);
 				lista.add(valore);
