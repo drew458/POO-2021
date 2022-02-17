@@ -27,3 +27,7 @@ public class Quiz {
 		c.stampa();
 	}
 }
+
+/* 
+ * Non compila perché il metodo stampa(VirginRadio o) non accetta un tipo Emittente come parametro
+ */

@@ -1,4 +1,4 @@
-package es12;
+
 
 /* Cosa stampa questo programma? */
 

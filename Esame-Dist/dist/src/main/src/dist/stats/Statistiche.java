@@ -31,9 +31,9 @@ public class Statistiche {
 	}
 
 	/**
-	 * 
 	 * @param contatti
-	 * @return una mappa che metta in relazione ogni Persona con la lista dei contatti in cui ha preso parte
+	 * @return una mappa che metta in relazione ogni Persona con la lista dei contatti in cui ha preso parte, ordinando
+	 * i contatti per numero di persone coinvolte / passo della simulazione
 	 */
 	public Map<Persona, List<Contatto>> produciStatistiche(Set<Contatto> contatti) {
 		Map<Persona, List<Contatto>> persona2contatti = new HashMap<>();

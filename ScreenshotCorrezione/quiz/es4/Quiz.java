@@ -21,5 +21,4 @@ public class Quiz {
 
 /* 
  * L'esecuzione lancia un eccezione di tipo MyException 
- * 
 */

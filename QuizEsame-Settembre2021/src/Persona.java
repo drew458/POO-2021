@@ -1,5 +1,3 @@
-package es3;
-
 /* Cosa stampa questo programma? */
 
 class Anagrafe {

@@ -1,5 +1,3 @@
-package es14;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -9,7 +7,6 @@ import java.util.List;
  *  Tale metodo deve ritornare true se la lista è già ordinata secondo l'ordinamento definito dal comparatore, false altrimenti.
  *  ATTENZIONE: non è necessario ordinare la lista in input o definire un nuovo comparatore.
  */
-
 public class Es14 {
 	public static <T> boolean isOrdinataSecondo(Comparator<T> cmp, List<T> l1) {
 		List<T> l2 = new ArrayList<>();

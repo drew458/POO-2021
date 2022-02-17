@@ -1,5 +1,3 @@
-package es9;
-
 /* Cosa succede compilando ed eseguendo il codice? */
 
 class MyException extends RuntimeException{}

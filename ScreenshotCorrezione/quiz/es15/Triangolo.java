@@ -55,6 +55,6 @@ public class Triangolo {
 }
 
 /*
- * Non compila perché la funzione getCoordinate() ritorna null 
+ * Compila ma lancia un'eccezione perché perché la funzione getCoordinate() ritorna null (NullPointerException)
  * 
 */
